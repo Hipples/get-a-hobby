@@ -5,6 +5,7 @@ import Title from '../../components/hobbies/coding';
 const Coding = () => (
     <View style={styles.container}>
         <Title />
+        <Description />
     </View>
 );
 
