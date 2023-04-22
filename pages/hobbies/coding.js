@@ -1,8 +1,10 @@
-import { View, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+
+import Title from '../../components/hobbies/coding';
 
 const Coding = () => (
     <View style={styles.container}>
-        <Text>Coding</Text>
+        <Title />
     </View>
 );
 
