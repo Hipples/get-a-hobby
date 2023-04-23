@@ -11,4 +11,4 @@ const styles = StyleSheet.create({
     text: {}
 });
 
-export default Coding;
+export default Title;

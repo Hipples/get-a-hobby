@@ -42,3 +42,20 @@ Share some examples of successful hobbyists or inspiring stories of people who h
 
 **Tips:**  
 Offer some practical tips for beginners on how to get started and stay motivated, such as finding a mentor, setting achievable goals, or joining a community of hobbyists. . .
+
+**Layout**
+Name 
+3/5 star rating --> modal explanation combining skill level, age, time, cost requirements
+relateable image?
+intro - pros & cons
+getting started 
+popular languages
+beginner project ideas
+advanced project ideas
+coding games
+tips
+FAQ
+resources
+
+
+

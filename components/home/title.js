@@ -1,12 +1,12 @@
 import { Text, View, StyleSheet } from 'react-native';
-import AppLoading from 'expo-app-loading';
+import { SplashScreen } from 'expo-splash-screen';
 import { useFonts, ComicNeue_300Light } from '@expo-google-fonts/comic-neue';
 
 const Title = () => {
     let [fontsLoaded] = useFonts({ComicNeue_300Light});
 
     if (!fontsLoaded) {
-        return <AppLoading />
+        return SplashScreen.hideAsync();
     } else {
         return (
             <View style={styles.container}>

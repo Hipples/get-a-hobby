@@ -8,3 +8,5 @@ const makeuseof = 'https://www.makeuseof.com/tag/best-programming-games/';
 const sam_solutions='https://www.sam-solutions.com/blog/top-10-programming-languages-and-their-use-cases/';
 //large repo of language docs
 const devdocs='https://devdocs.io/python~3.11/';
+//getting-started
+const hackr='https://hackr.io/blog/how-to-learn-programming';

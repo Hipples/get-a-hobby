@@ -1,13 +1,32 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { View, StyleSheet } from 'react-native';
 
-const DifficultyRating = () => (
-    <View style={styles.container}>
-        <Text style={styles.text}>Level of Difficulty</Text>
-    </View>
-);
+import { star, emptyStar } from './stars';
+
+const DifficultyRating = ({ rating }) => {
+    const [stars, setStars] = useState({ emptyStar });
+
+    for (var i = 1; i <= 5; i++) {
+        if (i <= rating) {
+            setStars = { star } 
+        } 
+    }
+
+    return (
+        <View style={styles.container}>
+            <Ionicons name='star' size={24} color='blue' />
+            <Ionicons name='star' size={24} color='blue' />
+            <Ionicons name='star' size={24} color='blue' />
+            <Ionicons name='star-outline' size={24} color='blue' />
+            <Ionicons name='star-outline' size={24} color='blue' />
+        </View>
+    );
+}
 
 const styles = StyleSheet.create({
-    container: {},
+    container: {
+        flexDirection: 'row',
+    },
     text: {}
 });
 
