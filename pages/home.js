@@ -1,13 +1,13 @@
 import { View, StyleSheet } from 'react-native';
 
+//import Logo from '../components/logo'
 import Title from '../components/home/title';
-import Coding from '../pages/hobbies/coding';
+//import Coding from '../pages/hobbies/coding';
 
 const Home = () => (
     <View style={styles.container}>
         {/* <Header /> */}
         <Title />
-        <Coding />
     </View>
 );
 
