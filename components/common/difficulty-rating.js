@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { Rating } from 'react-native-ratings';
 
 const DifficultyRating = ({ rating }) => (
@@ -15,8 +15,7 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    text: {}
+    }
 });
 
 export default DifficultyRating;
