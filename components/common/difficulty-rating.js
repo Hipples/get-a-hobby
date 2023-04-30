@@ -14,6 +14,7 @@ const DifficultyRating = ({ rating }) => (
     </View>
 );
 
+// can either be removed or updated if able to work across hobbies
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',

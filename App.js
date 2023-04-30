@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import Home from './pages/home';
+import Welcome from './pages/welcome';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Home />
+      <Welcome />
     </View>
   );
 }
@@ -16,5 +16,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });

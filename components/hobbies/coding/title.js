@@ -7,8 +7,13 @@ const Title = () => (
 );
 
 const styles = StyleSheet.create({
-    container: {},
-    text: {}
+    container: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    text: {
+        fontSize: 20
+    }
 });
 
-export default Coding;
+export default Title;
