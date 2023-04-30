@@ -1,11 +1,13 @@
 import { View, StyleSheet } from 'react-native';
 
 import Title from '../components/home/title';
+import DifficultyRating from '../components/common/difficulty-rating';
 
 const Home = () => (
     <View style={styles.container}>
-        {/* <Header /> */}
         <Title />
+        <DifficultyRating
+            rating={5} />
     </View>
 );
 
