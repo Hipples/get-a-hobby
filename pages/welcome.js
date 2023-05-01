@@ -17,15 +17,18 @@ const WelcomeMessage = () => (
     </View>
 )
 
-const GetStarted = () => (
+const GetStarted = ({ navigation }) => (
     <View style={styles.buttonContainer}>
-        <Pressable style={styles.button}>
+        <Pressable 
+            style={({pressed}) => {[
+                pressed ? styles.pressed : styles.default ]}}
+            onPress={() => navigation.navigate('Home')}>
             <Text style={styles.buttonText}>Get Started!</Text>
         </Pressable>
     </View>
-)
+);
 
-const Welcome = () => {
+const Welcome = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
@@ -36,9 +39,9 @@ const Welcome = () => {
                   tintColor="#EDEDED" />
             </View>
             <WelcomeMessage />
-            <GetStarted />
+            <GetStarted navigation={navigation} />
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -50,7 +53,6 @@ const styles = StyleSheet.create({
     },
     logoContainer: {
         marginRight: 25,
-
     },
     messageContainer: {
         paddingHorizontal: 15,
@@ -68,6 +70,7 @@ const styles = StyleSheet.create({
         textShadowRadius: 1
     },
     buttonContainer: {
+        
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 30,
@@ -77,6 +80,12 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         borderColor: '#FFF',
         elevation: 10
+    },
+    pressed: {
+        backgroundColor: '#AAA'
+    },
+    default: {
+        backgroundColor: '#555'
     },
     buttonText: {
         color: '#FFF',
