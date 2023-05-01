@@ -28,13 +28,14 @@ const styles = StyleSheet.create({
         borderWidth: 3,
         borderRadius: 100,
         borderColor: '#337',
-        elevation: 3
+        elevation: 3,
+        shadowColor: '#004',
     },
     pressed: {
-        backgroundColor: '#EFEFEF'
+        backgroundColor: '#999'
     },
     default: {
-        backgroundColor: '#999'
+        backgroundColor: '#DDD'
     },
     buttonText: {
         color: '#337',

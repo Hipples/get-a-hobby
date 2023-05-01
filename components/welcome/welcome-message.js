@@ -3,11 +3,15 @@ import { View, Text, StyleSheet } from 'react-native';
 const WelcomeMessage = () => (
     <View style={styles.messageContainer}>
         <Text style={styles.message}>
-            <Text style={styles.heading}>Welcome to GetAHobby!{"\n\n"}</Text>
+            <Text style={styles.heading}>
+                Welcome to GetAHobby!{"\n\n"}
+            </Text>
             Whether you're looking to relax, get creative,
             or learn something new, we've got you covered. 
             {"\n\n"}
-            <Text style={{fontStyle: 'normal'}}>Get started finding the hobby for you!</Text>
+            <Text style={{fontStyle: 'normal'}}>
+                Get started finding the hobby for you!
+            </Text>
         </Text>
     </View>
 );
