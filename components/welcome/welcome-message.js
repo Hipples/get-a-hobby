@@ -3,32 +3,29 @@ import { View, Text, StyleSheet } from 'react-native';
 const WelcomeMessage = () => (
     <View style={styles.messageContainer}>
         <Text style={styles.message}>
-            Welcome to GetAHobby! 
-            {"\n\n"}
+            <Text style={styles.heading}>Welcome to GetAHobby!{"\n\n"}</Text>
             Whether you're looking to relax, get creative,
             or learn something new, we've got you covered. 
             {"\n\n"}
-            Let's explore and find the hobby for you!
+            <Text style={{fontStyle: 'normal'}}>Get started finding the hobby for you!</Text>
         </Text>
     </View>
 );
 
 const styles = StyleSheet.create({
     messageContainer: {
-        paddingHorizontal: 20,
+        paddingHorizontal: 10,
         marginBottom: 20
     },
     message: {
-        color: "#FFF",
-        fontSize: 18,
+        color: "#EFEFEF",
+        fontSize: 20,
         fontStyle: 'italic',
         textAlign: 'center',
-        textShadowColor: '#333',
-        textShadowOffset: {
-          height: 2, 
-          width: 2
-        },
-        textShadowRadius: 1
+    },
+    heading: {
+        fontSize: 30,
+        fontStyle: 'normal'
     }
 });
 

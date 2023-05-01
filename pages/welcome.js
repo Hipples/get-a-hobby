@@ -1,20 +1,14 @@
-import { View, Text, Image, Pressable, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
+import DisplayLogo from '../components/welcome/display-logo';
 import WelcomeMessage from '../components/welcome/welcome-message';
-import GetStarted from '../components/welcome/get-started';
-
-const logo = require('../assets/logo.png');
+import GetStartedButton from '../components/welcome/get-started-button';
 
 const Welcome = ({ navigation }) => (
     <View style={styles.container}>
-        <View style={styles.logoContainer}>
-            <Image 
-                source={logo}
-                resizeMode='contain'
-                tintColor="#EDEDED" />
-        </View>
+        <DisplayLogo />
         <WelcomeMessage />
-        <GetStarted navigation={navigation} />
+        <GetStartedButton navigation={navigation} />
     </View>
 );
 
@@ -24,10 +18,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#555'
-    },
-    logoContainer: {
-        marginRight: 25,
-    }   
+    } 
 });
 
 export default Welcome;

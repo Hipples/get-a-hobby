@@ -1,7 +1,7 @@
 import { View, Pressable, Text, StyleSheet } from 'react-native';
 
-//button to go from welcome --> home screen labeled Get Started!
-const GetStarted = ({ navigation }) => (
+//button to go from welcome --> home screen labeled with Get Started!
+const GetStartedButton = ({ navigation }) => (
     <View style={styles.buttonContainer}>
         <Pressable 
             style={({ pressed }) => [
@@ -13,11 +13,12 @@ const GetStarted = ({ navigation }) => (
     </View>
 );
 
-//get-started button styles
+//styles currently focused toward android
 const styles = StyleSheet.create({
     buttonContainer: {
         flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginBottom: 20
     },
     button: {
         height: 50,
@@ -26,20 +27,20 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderWidth: 3,
         borderRadius: 100,
-        borderColor: '#FFF',
-        elevation: 10
+        borderColor: '#337',
+        elevation: 3
     },
     pressed: {
-        backgroundColor: '#999'
+        backgroundColor: '#EFEFEF'
     },
     default: {
-        backgroundColor: '#555'
+        backgroundColor: '#999'
     },
     buttonText: {
-        color: '#FFF',
-        fontSize: 20,
+        color: '#337',
+        fontSize: 25,
         fontWeight: 'bold'
     }
 });
 
-export default GetStarted;
+export default GetStartedButton;
