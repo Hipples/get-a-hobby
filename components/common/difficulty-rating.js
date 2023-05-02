@@ -1,22 +1,57 @@
 // more info on rating props can be found at the link below:
 // https://github.com/Monte9/react-native-ratings
-
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { useState } from 'react'
+import { View, Text, Image, Pressable, Modal, StyleSheet } from 'react-native';
 import { Rating } from 'react-native-ratings';
 
 const infoIcon = require('../../assets/info-icon.png')
 
-const RatingLabel = () => (
-    <View style={styles.labelContainer}>
-        <Text style={styles.label}>
-            Difficulty Rating
-        </Text>
-        <Image 
-            source={infoIcon}
-            resizeMode='contain' 
-            style={styles.icon}/>
-    </View>
-);
+const InfoModal = ({ modalVisible, setModalVisible }) => {
+
+    return (
+      <View style={styles.centeredView}>
+        <Modal
+          animationType='fade'
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible);
+          }}>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>Hello World!</Text>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => setModalVisible(!modalVisible)}>
+                <Text style={styles.textStyle}>Hide Modal</Text>
+              </Pressable>
+            </View>
+          </View>
+        </Modal>
+      </View>
+    );
+}
+
+const RatingLabel = () => {
+    const [modalVisible, setModalVisible] = useState(false);
+    return (
+        
+        <View style={styles.labelContainer}>
+            <InfoModal 
+                modalVisible={modalVisible}
+                setModalVisible={setModalVisible} />
+            <Text style={styles.label}>
+                Difficulty Rating
+            </Text>
+            <Pressable
+                onPress={() => setModalVisible(true)}>
+                <Image 
+                    source={infoIcon}
+                    resizeMode='contain' 
+                    style={styles.icon}/>
+            </Pressable>
+        </View>
+    );
+}
 
 const DifficultyRating = ({ rating }) => (
     <View style={styles.container}>
@@ -54,7 +89,48 @@ const styles = StyleSheet.create({
     },
     icon: {
         height: 20,
-    }
+    },
+    centeredView: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 22,
+    },
+    modalView: {
+        margin: 20,
+        backgroundColor: 'white',
+        borderRadius: 20,
+        padding: 35,
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: {
+          width: 0,
+          height: 2, 
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5,
+    },
+    button: {
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2,
+      },
+      buttonOpen: {
+        backgroundColor: '#F194FF',
+      },
+      buttonClose: {
+        backgroundColor: '#2196F3',
+      },
+      textStyle: {
+        color: 'white',
+        fontWeight: 'bold',
+        textAlign: 'center',
+      },
+      modalText: {
+        marginBottom: 15,
+        textAlign: 'center',
+      },
+
 });
 
 export default DifficultyRating;
