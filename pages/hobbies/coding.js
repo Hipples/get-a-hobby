@@ -2,15 +2,10 @@ import { ScrollView, StyleSheet } from 'react-native';
 
 import { View, Text, Image, Dimensions, SafeAreaView } from 'react-native'
 
+import Title from '../../components/hobbies/coding/title';
 import DifficultyRating from '../../components/common/difficulty-rating';
 
 const codingImage = require('../../assets/coding-image.png')
-
-const HobbyTitle = () => (
-    <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>Coding</Text>
-    </View>
-);
 
 const HobbyImage = () => (
     <View style={styles.imageContainer}>
@@ -112,7 +107,7 @@ const Coding = () => (
         contentContainerStyle={styles.container}
         overScrollMode='always' 
         persistentScrollbar={true} >
-        <HobbyTitle />
+        <Title />
         <HobbyImage />
         <HobbyDifficulty />
         <HobbyDescription />
@@ -127,17 +122,6 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'stretch',
         backgroundColor: "#666"
-    },
-    titleContainer: {
-        height: 75,
-        borderWidth: 2,
-        padding: 10,
-        margin: 10
-    },
-    titleText: {
-        textAlign: 'center',
-        fontSize: 35,
-        color: '#EFEFEF'
     },
     imageContainer: {
         height: 300,

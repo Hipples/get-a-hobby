@@ -1,18 +1,22 @@
 import { View, Text, StyleSheet } from 'react-native';
 
 const Title = () => (
-    <View style={styles.container}>
-        <Text style={styles.text}>Coding</Text>
+    <View style={styles.titleContainer}>
+        <Text style={styles.titleText}>Coding</Text>
     </View>
 );
 
 const styles = StyleSheet.create({
-    container: {
-        justifyContent: 'center',
-        alignItems: 'center'
+    titleContainer: {
+        height: 75,
+        borderWidth: 2,
+        padding: 10,
+        margin: 10
     },
-    text: {
-        fontSize: 20
+    titleText: {
+        textAlign: 'center',
+        fontSize: 35,
+        color: '#EFEFEF'
     }
 });
 
