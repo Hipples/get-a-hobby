@@ -1,9 +1,11 @@
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Pressable, Text } from 'react-native';
 
 
-const Home = () => (
+const Home = ({ navigation }) => (
     <View style={styles.container}>
-
+        <Pressable onPress={() => navigation.navigate("Coding")}>
+            <Text>Preview Coding</Text>
+        </Pressable>
     </View>
 );
 

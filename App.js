@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import Welcome from './pages/welcome';
 import Home from './pages/home';
+import Coding from './pages/hobbies/coding';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,9 @@ const App = () => {
                 <Stack.Screen 
                     name="Home" 
                     component={Home} />
+                <Stack.Screen
+                    name="Coding"
+                    component={Coding} />
             </Stack.Navigator>
         </NavigationContainer>
     );
