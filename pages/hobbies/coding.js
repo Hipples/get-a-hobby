@@ -57,14 +57,14 @@ const styles = StyleSheet.create({
         flex: 1,
         marginHorizontal: 10,
         marginBottom: 10,
-        justifyContent: 'flex-start',
+
         alignItems: 'center',
         borderWidth: 2,
         backgroundColor: "#999"
     },
     image: {
-        height: 300,
-        width: 300,
+        height: 250,
+        width: 250,
         
     }
 });
