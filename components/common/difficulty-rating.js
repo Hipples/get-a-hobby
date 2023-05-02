@@ -6,7 +6,7 @@ import { Rating } from 'react-native-ratings';
 
 import RatingLabel from './rating-label';
 
-const DifficultyRating = ({ rating }) => (
+const DifficultyRating = ({ rating, style }) => (
     <View style={styles.container}>
         <RatingLabel />
         <Rating 

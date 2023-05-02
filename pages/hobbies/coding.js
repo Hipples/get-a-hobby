@@ -3,24 +3,9 @@ import { ScrollView, StyleSheet } from 'react-native';
 import { View, Text, Image, Dimensions, SafeAreaView } from 'react-native'
 
 import Title from '../../components/hobbies/coding/title';
-import DifficultyRating from '../../components/common/difficulty-rating';
+import CodingImage from '../../components/hobbies/coding/coding-image';
+import CodingDifficulty from '../../components/hobbies/coding/coding-difficulty';
 import Description from '../../components/hobbies/coding/description';
-
-const codingImage = require('../../assets/coding-image.png')
-
-const HobbyImage = () => (
-    <View style={styles.imageContainer}>
-        <Image
-            style={styles.image} 
-            source={codingImage}
-            resizeMode='contain' />
-    </View>
-);
-
-const HobbyDifficulty = () => (
-    <DifficultyRating rating={3} />
-)
-
 
 const HobbyRequirements = () => (
     <View style={styles.descriptionContainer}>
@@ -101,8 +86,8 @@ const Coding = () => (
         overScrollMode='always' 
         persistentScrollbar={true} >
         <Title />
-        <HobbyImage />
-        <HobbyDifficulty />
+        <CodingImage />
+        <CodingDifficulty />
         <Description />
         <HobbyRequirements />
         <HobbyHealthAndSafety />
@@ -116,19 +101,7 @@ const styles = StyleSheet.create({
         alignItems: 'stretch',
         backgroundColor: "#666"
     },
-    imageContainer: {
-        height: 300,
-        marginHorizontal: 10,
-        marginBottom: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-        borderWidth: 2,
-        backgroundColor: "#666"
-    },
-    image: {
-        height: 350,
-        width: 350,
-    },
+
 
     tipContainer: {
         justifyContent: 'space-around',
