@@ -25,25 +25,36 @@ const HobbyDifficulty = () => (
     <DifficultyRating rating={3} />
 )
 
+const HobbyDescription = () => (
+    <View style={styles.descriptionContainer}>
+        <Text style={styles.descriptionLabel}>Description:</Text>
+        <Text style={styles.descriptionText}>
+        Coding is an incredibly fulfilling hobby that allows you to exercise your creativity and problem-solving skills. From creating simple programs to building complex applications, you can bring your ideas to life and share them with others. The coding community is welcoming and collaborative, making it easy to connect with like-minded individuals and work on exciting projects. Start your coding journey today and discover a world of endless possibilities!
+        </Text>
+    </View>
+)
+
 const Coding = () => (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView 
+        contentContainerStyle={styles.container}
+        overScrollMode='always' 
+        persistentScrollbar={true} >
         <HobbyTitle />
         <HobbyImage />
         <HobbyDifficulty />
-        {/*}<HobbyDescription />
-        <HobbyResources /> */}
+        <HobbyDescription />
+        {/* <HobbyResources /> */}
     </ScrollView>
 );
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'stretch',
-        backgroundColor: "#555"
+        backgroundColor: "#666"
     },
     titleContainer: {
-        flex: 1,
+        height: 75,
         borderWidth: 2,
         padding: 10,
         margin: 10
@@ -54,18 +65,33 @@ const styles = StyleSheet.create({
         color: '#EFEFEF'
     },
     imageContainer: {
-        flex: 1,
+        height: 250,
         marginHorizontal: 10,
         marginBottom: 10,
-
+        justifyContent: 'center',
         alignItems: 'center',
         borderWidth: 2,
-        backgroundColor: "#999"
+        backgroundColor: "#666"
     },
     image: {
         height: 250,
         width: 250,
-        
+    },
+    descriptionContainer: {
+        height: 400,
+        borderWidth: 2,
+        marginHorizontal: 10,
+        padding: 10,
+        marginBottom: 10
+    },
+    descriptionLabel: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: "#EFEFEF"
+    },
+    descriptionText: {
+        fontSize: 20,
+        color: "#EFEFEF"
     }
 });
 

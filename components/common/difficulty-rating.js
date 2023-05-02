@@ -10,7 +10,7 @@ const DifficultyRating = ({ rating }) => (
     <View style={styles.container}>
         <RatingLabel />
         <Rating 
-            tintColor="#555"  // background of stars container
+            tintColor="#666"  // background of stars container
             readonly={true}  // user cannot modify star display
             ratingCount={5}  // easy, novice, intermediate, advanced, expert
             startingValue={rating}  // sets number of filled stars to reflect rating
@@ -21,12 +21,12 @@ const DifficultyRating = ({ rating }) => (
 // can either be removed or updated if able to work across hobbies
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        height: 100,
         justifyContent: 'center',
         alignItems: 'flex-start',
         borderWidth: 2,
         marginHorizontal: 10,
-        marginBottom: 2
+        marginBottom: 10
     },
     stars: {
         paddingHorizontal: 10
