@@ -9,14 +9,14 @@ const infoIcon = require('../../assets/info-icon.png')
 const InfoModal = ({ modalVisible, setModalVisible }) => {
 
     return (
-      <View style={styles.centeredView}>
+      <View>
         <Modal
+          transparent={true}
           animationType='fade'
           visible={modalVisible}
           onRequestClose={() => {
             setModalVisible(!modalVisible);
           }}>
-          <View style={styles.centeredView}>
             <View style={styles.modalView}>
               <Text style={styles.modalText}>Hello World!</Text>
               <Pressable
@@ -25,7 +25,6 @@ const InfoModal = ({ modalVisible, setModalVisible }) => {
                 <Text style={styles.textStyle}>Hide Modal</Text>
               </Pressable>
             </View>
-          </View>
         </Modal>
       </View>
     );
@@ -89,11 +88,6 @@ const styles = StyleSheet.create({
     },
     icon: {
         height: 20,
-    },
-    centeredView: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 22,
     },
     modalView: {
         margin: 20,
