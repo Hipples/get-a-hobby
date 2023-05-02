@@ -1,39 +1,43 @@
 // more info on rating props can be found at the link below:
 // https://github.com/Monte9/react-native-ratings
+
 import { useState } from 'react'
 import { View, Text, Image, Pressable, Modal, StyleSheet } from 'react-native';
 import { Rating } from 'react-native-ratings';
 
 const infoIcon = require('../../assets/info-icon.png')
 
-const InfoModal = ({ modalVisible, setModalVisible }) => {
-
-    return (
-      <View>
+const InfoModal = ({ modalVisible, setModalVisible }) => (
+    <View>
         <Modal
-          transparent={true}
-          animationType='fade'
-          visible={modalVisible}
-          onRequestClose={() => {
-            setModalVisible(!modalVisible);
-          }}>
+            transparent={true}
+            animationType='fade'
+            visible={modalVisible}
+            onRequestClose={() => {
+                setModalVisible(!modalVisible)}} >
             <View style={styles.modalView}>
-              <Text style={styles.modalText}>Hello World!</Text>
-              <Pressable
-                style={[styles.button, styles.buttonClose]}
-                onPress={() => setModalVisible(!modalVisible)}>
-                <Text style={styles.textStyle}>Hide Modal</Text>
-              </Pressable>
+                <Text style={styles.modalText}>
+                    Hobby Difficulty Ratings: {"\n\n"}
+                    1 star: Easy {"\n"}
+                    2 star: Novice {"\n"}
+                    3 star: Intermediate {"\n"}
+                    4 star: Advanced {"\n"}
+                    5 star: Expert {"\n"}
+                </Text>
+                <Pressable
+                    style={[styles.button, styles.buttonClose]}
+                    onPress={() => setModalVisible(!modalVisible)}>
+                    <Text style={styles.textStyle}>Hide Modal</Text>
+                </Pressable>
             </View>
         </Modal>
-      </View>
-    );
-}
+    </View>
+);
 
 const RatingLabel = () => {
     const [modalVisible, setModalVisible] = useState(false);
-    return (
-        
+
+    return (        
         <View style={styles.labelContainer}>
             <InfoModal 
                 modalVisible={modalVisible}
@@ -109,9 +113,6 @@ const styles = StyleSheet.create({
         padding: 10,
         elevation: 2,
       },
-      buttonOpen: {
-        backgroundColor: '#F194FF',
-      },
       buttonClose: {
         backgroundColor: '#2196F3',
       },
@@ -122,7 +123,7 @@ const styles = StyleSheet.create({
       },
       modalText: {
         marginBottom: 15,
-        textAlign: 'center',
+        textAlign: 'left',
       },
 
 });
