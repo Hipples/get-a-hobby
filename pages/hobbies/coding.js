@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet } from 'react-native';
 
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, Dimensions, SafeAreaView } from 'react-native'
 
 import DifficultyRating from '../../components/common/difficulty-rating';
 
@@ -58,7 +58,47 @@ const HobbyHealthAndSafety = () => (
         Additionally, it is important to be mindful of cybersecurity threats and take appropriate measures to protect your devices and data. Regularly backing up your work and using antivirus software can help prevent loss of data and sensitive information. By prioritizing your health and safety, you can enjoy coding as a hobby while minimizing any potential risks.
         </Text>
     </View>
-)
+);
+
+const tips = [
+    {
+        index: 1,
+        tip: "Build projects that excite you: Coding can be a lot of fun when you're working on something that interests you. So, choose projects that inspire you, whether it's creating a game, building a website, or automating a task you find repetitive."
+    },{
+        index: 2,
+        tip: "Don't be afraid to ask for help: The coding community is incredibly supportive, so don't hesitate to reach out to others for help and guidance. There are plenty of online forums and communities where you can connect with other coders and learn from their experiences."
+    },{
+        index: 3,
+        tip: "Experiment with different programming languages: Don't be afraid to try different programming languages and tools to find the ones that work best for you. Each language has its own strengths and weaknesses, and you may find that you enjoy certain languages more than others.",
+    },{
+        index: 4,
+        tip: "Experiment and make mistakes: Making mistakes is a natural part of the learning process. So, don't be afraid to experiment and try new things, even if it means making errors along the way. Learning from your mistakes is an important part of becoming a better coder.",
+    },{
+        index: 5,
+        tip: "Keep learning: The world of coding is constantly evolving, with new technologies and techniques emerging all the time. So, make sure to stay up-to-date with the latest trends and developments by reading blogs, attending webinars, and taking online courses. Continuous learning is essential to stay ahead of the game and to keep enjoying coding as a hobby."
+    }]
+
+const item_width = Dimensions.get('window').width
+
+const HobbyTips = () => {
+
+    return (
+    <SafeAreaView>
+        <ScrollView 
+            horizontal={true}
+            snapToInterval={item_width}
+            bounces={false}
+            showsHorizontalScrollIndicator={false}>
+        {tips.map((the) => {
+            return (
+                <View key={the.index} style={styles.tipContainer}>
+                    <Text style={styles.descriptionText}>{the.tip}</Text>
+                </View>
+            );
+        })}
+        </ScrollView>
+    </SafeAreaView>
+)}
 
 const Coding = () => (
     <ScrollView 
@@ -71,6 +111,7 @@ const Coding = () => (
         <HobbyDescription />
         <HobbyRequirements />
         <HobbyHealthAndSafety />
+        <HobbyTips />
     </ScrollView>
 );
 
@@ -112,13 +153,21 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     descriptionLabel: {
-        fontSize: 25,
+        fontSize: 22,
         fontWeight: 'bold',
         color: "#EFEFEF"
     },
     descriptionText: {
         fontSize: 20,
         color: "#EFEFEF"
+    },
+    tipContainer: {
+        height: 300,
+        width: item_width-20,
+        borderWidth: 2,
+        marginHorizontal: 10,
+        marginBottom: 10,
+        padding: 10
     }
 });
 

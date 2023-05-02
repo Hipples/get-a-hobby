@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     label: {
-        fontSize: 20,
+        fontSize: 22,
+        fontWeight: 'bold',
         color: '#EFEFEF'
     },
     icon: {
