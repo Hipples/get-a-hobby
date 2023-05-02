@@ -1,16 +1,31 @@
 import { View, Text, StyleSheet } from 'react-native';
 
 const Description = () => (
-    <View style={styles.container}>
-        <Text style={styles.text}>
-            Coding as a hobby is an excellent way to exercise your creativity and problem-solving skills. With coding, you have the power to create anything you can imagine, from simple programs that automate daily tasks to complex applications that serve millions of users. You'll learn to break down problems into smaller, manageable pieces and develop solutions using logic and critical thinking. Plus, you'll have the satisfaction of seeing your ideas come to life and the ability to share them with others. Coding as a hobby also offers a supportive and welcoming community, where you can connect with like-minded people, share knowledge, and collaborate on exciting projects.
+    <View style={styles.descriptionContainer}>
+        <Text style={styles.descriptionHeader}>Description:</Text>
+        <Text style={styles.descriptionText}>
+            Coding is an incredibly fulfilling hobby that allows you to exercise your creativity and problem-solving skills. From creating simple programs to building complex applications, you can bring your ideas to life and share them with others. The coding community is welcoming and collaborative, making it easy to connect with like-minded individuals and work on exciting projects. Start your coding journey today and discover a world of endless possibilities!
         </Text>
     </View>
 );
 
 const styles = StyleSheet.create({
-    container: {},
-    text: {}
+    descriptionContainer: {
+        height: 700,
+        borderWidth: 2,
+        marginHorizontal: 10,
+        padding: 10,
+        marginBottom: 10
+    },
+    descriptionHeader: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        color: "#EFEFEF"
+    },
+    descriptionText: {
+        fontSize: 20,
+        color: "#EFEFEF"
+    }
 });
 
 export default Description;
