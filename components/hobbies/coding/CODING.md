@@ -7,7 +7,7 @@ Coding
 Coding as a hobby is an excellent way to exercise your creativity and problem-solving skills. With coding, you have the power to create anything you can imagine, from simple programs that automate daily tasks to complex applications that serve millions of users. You'll learn to break down problems into smaller, manageable pieces and develop solutions using logic and critical thinking. Plus, you'll have the satisfaction of seeing your ideas come to life and the ability to share them with others. Coding as a hobby also offers a supportive and welcoming community, where you can connect with like-minded people, share knowledge, and collaborate on exciting projects.
 
 **Difficulty Rating:** 3/5
-Coding as a hobby can be moderately challenging, which can make success extra rewarding! A 3/5 difficulty rating is given for reasons such as the steep learning curve for beginners, the frustration of debugging, the need for foundational knowledge in computer science concepts, the challenge of keeping up with new technologies, and the varying complexity of coding projects. However, with practice, patience, and a willingness to learn, anyone can become a skilled hobbyist programmer. -ChatGPT
+Coding as a hobby can be moderately challenging, which can make success extra rewarding! An intermediate difficulty rating is given for reasons such as the steep learning curve for beginners, the frustration of debugging, the need for foundational knowledge in computer science concepts, the challenge of keeping up with new technologies, and the varying complexity of coding projects. However, with practice, patience, and a willingness to learn, anyone can become a skilled hobbyist programmer.
 
 **Skill Level:**  
 Programming can be a great hobby for people of all ages and skill levels, from children to seniors. 
@@ -36,9 +36,6 @@ Stationary and mentally draining. . .
 
 **Benefits:**  
 Improve creative problem solving skills. . .
-
-**Success Stories:**  
-Share some examples of successful hobbyists or inspiring stories of people who have pursued the hobby with passion and dedication. . .
 
 **Tips:**  
 Offer some practical tips for beginners on how to get started and stay motivated, such as finding a mentor, setting achievable goals, or joining a community of hobbyists. . .
