@@ -2,7 +2,7 @@ import { View, Image, StyleSheet } from 'react-native';
 
 const codingImage = require('../../../assets/coding-image.png');
 
-const CodingImage = () => (
+const DisplayImage = () => (
     <View style={styles.imageContainer}>
         <Image
             style={styles.image} 
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default CodingImage;
+export default DisplayImage;

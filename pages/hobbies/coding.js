@@ -1,24 +1,12 @@
 import { ScrollView, StyleSheet } from 'react-native';
 
-import { View, Text, Image, Dimensions, SafeAreaView } from 'react-native'
+import { View, Text, Dimensions, SafeAreaView } from 'react-native'
 
 import Title from '../../components/hobbies/coding/title';
-import CodingImage from '../../components/hobbies/coding/coding-image';
-import CodingDifficulty from '../../components/hobbies/coding/coding-difficulty';
+import DisplayImage from '../../components/hobbies/coding/display-image';
+import Difficulty from '../../components/hobbies/coding/difficulty';
 import Description from '../../components/hobbies/coding/description';
-
-const HobbyRequirements = () => (
-    <View style={styles.descriptionContainer}>
-        <Text style={styles.descriptionLabel}>Requirements:</Text>
-        <Text style={styles.descriptionText}>
-            Getting started with coding as a hobby requires little more than a computer and an internet connection. While some programming languages may require specific software or tools, many are available for free online. 
-            {"\n\n"}
-            However, to make real progress, consistency in learning is essential. Dedication to regular practice, and a willingness to experiment with new concepts and techniques are key to mastering coding skills. As you progress, you may want to invest in additional resources like books or courses to deepen your knowledge and skills. But the most important requirement for coding as a hobby is a consistent effort to learn and grow. 
-            {"\n\n"}
-            With persistence, anyone can become a proficient coder and enjoy the limitless potential that coding offers.
-        </Text>
-    </View>
-);
+import Requirements from '../../components/hobbies/coding/requirements';
 
 const HobbyHealthAndSafety = () => (
     <View style={styles.descriptionContainer}>
@@ -35,23 +23,23 @@ const HobbyHealthAndSafety = () => (
 
 const codingTips = [
     {
-        tip: 1,
+        index: 1,
         title: "Build Projects That Excite You!",
         explanation: "Coding can be a lot of fun when you're working on something that interests you!\n\nChoose projects that inspire you, whether it's creating a game, building a website, or automating a task you find repetitive."
     },{
-        tip: 2,
+        index: 2,
         title: "Dont Be Afraid to Ask for Help!",
         explanation: "The coding community is incredibly supportive, so don't hesitate to reach out to others for help and guidance.\n\nThere are plenty of online forums and communities where you can connect with other coders and learn from their experiences.\n\nCheck out the resources section below if you are unsure where to start!"
     },{
-        tip: 3,
+        index: 3,
         title: "Play with Different Programming Languages!",
         explanation: "Don't be afraid to try different programming languages and tools to find the ones that work best for you.\n\nEach language has its own strengths and weaknesses, and you may find that you enjoy certain languages more than others.\n\nThis application was built using React Native with an Expo framework!",
     },{
-        tip: 4,
+        index: 4,
         title: "Experiment and Make Mistakes!",
         explanation: "Making mistakes is a natural part of the learning process.\n\nSo, don't be afraid to experiment and try new things, even if it means making errors along the way.\n\nLearning from your mistakes is an important part of becoming a better coder.",
     },{
-        tip: 5,
+        index: 5,
         title: "Keep Learning!",
         explanation: "The world of coding is constantly evolving, with new technologies and techniques emerging all the time.\n\nSo, make sure to stay up-to-date with the latest trends and developments by reading blogs, attending webinars, and taking online courses.\n\nContinuous learning is essential to stay ahead of the game and to keep enjoying coding as a hobby."
     }]
@@ -69,8 +57,8 @@ const HobbyTips = () => {
             showsHorizontalScrollIndicator={false}>
         {codingTips.map((each) => {
             return (
-                <View key={each.tip} style={styles.tipContainer}>
-                    <Text style={styles.tipHeader}>Tip #{each.tip}</Text>
+                <View key={each.index} style={styles.tipContainer}>
+                    <Text style={styles.tipHeader}>Tip #{each.index}</Text>
                     <Text style={styles.tipTitle}>{each.title}</Text>
                     <Text style={styles.tipText}>{each.explanation}</Text>
                 </View>
@@ -83,13 +71,12 @@ const HobbyTips = () => {
 const Coding = () => (
     <ScrollView 
         contentContainerStyle={styles.container}
-        overScrollMode='always' 
         persistentScrollbar={true} >
         <Title />
-        <CodingImage />
-        <CodingDifficulty />
+        <DisplayImage />
+        <Difficulty />
         <Description />
-        <HobbyRequirements />
+        <Requirements />
         <HobbyHealthAndSafety />
         <HobbyTips />
     </ScrollView>

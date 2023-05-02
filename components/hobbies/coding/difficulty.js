@@ -1,8 +1,8 @@
 import DifficultyRating from '../../common/difficulty-rating';
 
-const CodingDifficulty = () => (
+const Difficulty = () => (
     <DifficultyRating 
         rating={3} />
 );
 
-export default CodingDifficulty;
+export default Difficulty;
