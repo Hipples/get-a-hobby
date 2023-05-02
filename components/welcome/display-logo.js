@@ -21,3 +21,5 @@ const styles = StyleSheet.create({
         marginTop: 30
     }  
 });
+
+export default DisplayLogo;
