@@ -16,14 +16,23 @@ const AddLink = ( props ) => {
     }, [props.url]);
     //return pressable text for hyperlinks
     return (
-        <Pressable onPress={handlePress}>
-            <Text style={[styles.link, props.linkStyle]}>{props.children}</Text>
+        <Pressable 
+            onPress={handlePress}>
+            <Text style={[
+                styles.link, 
+                props.linkStyle]}>
+                {props.children}
+            </Text>
         </Pressable>
     );
 }
+
 //passing to linkStyle will override any default styles
 const styles = StyleSheet.create({
-    link: {color: 'white'}
+    link: {
+        color: 'white',
+        fontSize: 20
+    }
 });
 
 export default AddLink;

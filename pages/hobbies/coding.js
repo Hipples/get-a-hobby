@@ -8,6 +8,20 @@ import Requirements from '../../components/hobbies/coding/requirements';
 import HealthAndSafety from '../../components/hobbies/coding/health-and-safety';
 import Tips from '../../components/hobbies/coding/tips';
 
+import { View } from 'react-native';
+import AddLink from '../../components/common/add-link';
+import codingResources from '../../constants/resources';
+
+const Resources = () => (
+    <View style={styles.resourcesContainer}>
+        {codingResources.map((link) => (
+            <View key={link.index}>
+                <AddLink url={link.url}>{link.title}{'\n'}</AddLink>
+            </View>
+        ))}
+    </View>
+);
+
 const Coding = () => (
     <ScrollView 
         contentContainerStyle={styles.container}
@@ -19,6 +33,7 @@ const Coding = () => (
         <Requirements />
         <HealthAndSafety />
         <Tips />
+        <Resources />
 
     </ScrollView>
 );
@@ -28,6 +43,11 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'stretch',
         backgroundColor: "#666"
+    },
+    resourcesContainer: {
+        height: 500,
+        borderWidth: 2,
+        marginHorizontal: 10
     }
 });
 

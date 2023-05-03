@@ -23,6 +23,8 @@ const codingResources = [
         index: 5,
         name: "DevDocs",
         url: "https://devdocs.io/",
-        info: "DevDocs combines multiple API documentations in a fast, organized, and searchable interface. DevDocs is free and open source. If you're new to coding, check out freeCodeCamp's open source curriculum."   
+        title: "DevDocs combines multiple API documentations in a fast, organized, and searchable interface. DevDocs is free and open source. If you're new to coding, check out freeCodeCamp's open source curriculum."   
     }
 ]; 
+
+export default codingResources;
