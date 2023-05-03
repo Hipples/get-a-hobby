@@ -19,6 +19,7 @@ const Coding = () => (
         <Requirements />
         <HealthAndSafety />
         <Tips />
+
     </ScrollView>
 );
 
