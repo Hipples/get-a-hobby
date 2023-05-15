@@ -6,6 +6,9 @@ const Home = ({ navigation }) => (
         <Pressable onPress={() => navigation.navigate("Coding")}>
             <Text>Preview Coding</Text>
         </Pressable>
+        <Pressable onPress={() => navigation.navigate("Volleyball")}>
+            <Text>Volleyball</Text>
+        </Pressable>
     </View>
 );
 

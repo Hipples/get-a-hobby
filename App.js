@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Welcome from './pages/welcome';
 import Home from './pages/home';
 import Coding from './pages/hobbies/coding';
+import Volleyball from './pages/hobbies/volleyball';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,9 @@ const App = () => {
                 <Stack.Screen
                     name="Coding"
                     component={Coding} />
+                <Stack.Screen
+                    name="Volleyball"
+                    component={Volleyball} />
             </Stack.Navigator>
         </NavigationContainer>
     );
