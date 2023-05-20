@@ -5,6 +5,7 @@ import Welcome from './pages/welcome';
 import Home from './pages/home';
 import Coding from './pages/hobbies/coding';
 import Volleyball from './pages/hobbies/volleyball';
+import Writing from './pages/hobbies/writing';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,9 @@ const App = () => {
                 <Stack.Screen
                     name="Volleyball"
                     component={Volleyball} />
+                <Stack.Screen
+                    name="Writing"
+                    component={Writing} />
             </Stack.Navigator>
         </NavigationContainer>
     );
