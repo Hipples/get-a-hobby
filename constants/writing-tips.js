@@ -48,7 +48,7 @@ The important thing is that being a good writer and continuing to improve does t
         index: 4,
         title: "...But don't forget to have fun",
         explanation: "This is a hobby, not (necessarily) a job. And even if it is a job, you likely got \
-started to have fun. Don't lose site of that. Don't get so far down in the weeds that you get \
+started to have fun. Don't lose sight of that. Don't get so far down in the weeds that you get \
 overwhelmed and miserable. The above advice about good habits was, as mentioned, for practical \
 reasons: to mitigate some of the common causes of frustration. Don't let it dominate you. Take \
 breaks. Do what's exciting to you. Don't be afraid to start up a random new side project just \
