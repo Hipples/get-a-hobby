@@ -29,7 +29,7 @@ const Requirements = () => (
 
 const styles = StyleSheet.create({
     requirementsContainer: {
-        height: 700,
+        height: 1100,
         backgroundColor: '#EFEFEF',
         borderWidth: 2,
         marginHorizontal: 10,
@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
     requirementsText: {
         fontSize: 20,
         color: "#000",
-        paddingVertical: 10
+        paddingVertical: 10,
+        paddingHorizontal: 5,
     }
 });
 

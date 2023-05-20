@@ -6,7 +6,7 @@ import Difficulty from '../../components/hobbies/writing/difficulty';
 import Description from '../../components/hobbies/writing/description';
 import Requirements from '../../components/hobbies/writing/requirements';
 import HealthAndSafety from '../../components/hobbies/writing/health-and-safety';
-import Tips from '../../components/hobbies/writing/tips';
+import Tips from '../../components/hobbies/writing/tips'
 
 import { View } from 'react-native';
 import AddLink from '../../components/common/add-link';
@@ -42,12 +42,14 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: 'flex-start',
         alignItems: 'stretch',
-        backgroundColor: "#666"
+        backgroundColor: "#666",
+        padding: 15
     },
     resourcesContainer: {
-        height: 500,
+        height: 730,
         borderWidth: 2,
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        padding: 20
     }
 });
 

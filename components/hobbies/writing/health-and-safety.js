@@ -19,7 +19,7 @@ const HealthAndSafety = () => (
 
 const styles = StyleSheet.create({
     healthAndSafetyContainer: {
-        height: 600,
+        height: 430,
         backgroundColor: '#EFEFEF',
         borderWidth: 2,
         marginHorizontal: 10,
@@ -31,12 +31,14 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: 'bold',
         color: "#338",
-        padding: 5
+        paddingVertical: 15,
+        paddingHorizontal: 5
     },
     healthAndSafetyText: {
         fontSize: 20,
         color: "#000",
-        paddingVertical: 10
+        paddingVertical: 15,
+        paddingHorizontal: 5
     }
 });
 

@@ -18,12 +18,13 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        borderWidth: 2,
+        borderWidth: 0,
         backgroundColor: "#666"
     },
     image: {
-        height: 350,
-        width: 350
+        height: 400,
+        width: 375
+
     }
 });
 

@@ -2,7 +2,7 @@ import DifficultyRating from '../../common/difficulty-rating';
 
 const Difficulty = () => (
     <DifficultyRating 
-        rating={3} />
+        rating={2} />
 );
 
 export default Difficulty;

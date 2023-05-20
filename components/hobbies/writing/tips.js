@@ -1,6 +1,6 @@
 import { Dimensions, SafeAreaView, ScrollView, View, Text, StyleSheet } from 'react-native';
 
-import codingTips from '../../../constants/writing-tips';
+import writingTips from '../../../constants/writing-tips';
 
 const item_width = Dimensions.get('window').width
 
@@ -11,7 +11,7 @@ const Tips = () => (
             snapToInterval={item_width}
             bounces={false}
             showsHorizontalScrollIndicator={false}>
-        {codingTips.map((tip) => {
+        {writingTips.map((tip) => {
             return (
                 <View key={tip.index} style={styles.tipContainer}>
                     <Text style={styles.tipHeader}>Tip #{tip.index}</Text>
@@ -27,8 +27,8 @@ const Tips = () => (
 const styles = StyleSheet.create({
     tipContainer: {
         justifyContent: 'space-around',
-        height: 600,
-        width: item_width-20,
+        height: 650,
+        width: item_width * 0.875,
         backgroundColor: '#a8a',
         borderWidth: 3,
         marginHorizontal: 10,

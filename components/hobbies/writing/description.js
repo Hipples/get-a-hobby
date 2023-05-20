@@ -35,7 +35,7 @@ const Description = () => (
 
 const styles = StyleSheet.create({
     descriptionContainer: {
-        height: 500,
+        height: 1300,
         backgroundColor: '#EFEFEF',
         borderWidth: 2,
         marginHorizontal: 10,
@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
     descriptionText: {
         fontSize: 20,
         color: "#000",
-        paddingVertical: 10
+        paddingVertical: 10,
+        paddingHorizontal: 5,
     }
 });
 

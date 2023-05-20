@@ -9,13 +9,13 @@ const Title = () => (
 const styles = StyleSheet.create({
     titleContainer: {
         height: 75,
-        borderWidth: 2,
+        borderWidth: 0,
         padding: 10,
         margin: 10
     },
     titleText: {
         textAlign: 'center',
-        fontSize: 35,
+        fontSize: 44,
         color: '#EFEFEF'
     }
 });
