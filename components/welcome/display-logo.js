@@ -1,15 +1,15 @@
-import { View, Image } from 'react-native';
+import { Image } from 'react-native';
 
-import { styles } from './welcome-styles';
+import { styles, LogoGradient } from './welcome-styles';
 
 const logo = require('../../assets/logo.png');
 
 const DisplayLogo = () => (
-    <View style={styles.logoContainer}>
+    <LogoGradient>
         <Image 
             source={logo}
-            style={styles.logo} />  
-    </View>
+            style={styles.logo}></Image>  
+    </LogoGradient>
 );
 
 export default DisplayLogo;

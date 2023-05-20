@@ -1,15 +1,16 @@
 export const colors = {
     primary: "#1f6818",
     secondary: "#437f7a",
-    tertiary: "#372761",
+    tertiary: "#261650",
 
     white: "#fdf9f7",
-    gray: "#95979e",
+    gray: "#b1b5b9",
     black: "#0d120d",
 }
 
 export const shadows = {
-    primary: "#1c4319"
+    primary: "#1c4319",
+    tertiary: "#1f1636"
 }
 
 export const highlights = {

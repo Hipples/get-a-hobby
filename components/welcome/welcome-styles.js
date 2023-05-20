@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import { colors, shadows, highlights, sizes } from '../../constants/theme';
 
@@ -7,17 +8,14 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: colors.white,
+        backgroundColor: colors.gray,
     },
     // just the logo
     logoContainer: {
         flex: 3,
-        backgroundColor: colors.gray,
-        marginTop: sizes.xxlarge,
-        paddingTop: sizes.medium,
-        borderColor: colors.tertiary,
-        borderTopWidth: sizes.xxsmall,
-        borderBottomWidth: sizes.xxsmall
+        paddingTop: sizes.xxlarge,
+        opacity: 0.9,
+        margin: sizes.xxlarge
     },
     logo: {
         flex: 1,
@@ -26,30 +24,30 @@ export const styles = StyleSheet.create({
     },
     // from 'Welcome' to 'you!'
     messageContainer: {
-        flex: 3,
-        margin: sizes.small,
+        flex: 2,
     },
     message: {
         color: colors.black,
-        fontSize: (sizes.medium+sizes.large)/2,
+        fontSize: sizes.medium,
         fontStyle: 'italic',
         textAlign: 'center',
     },
     heading: {
-        fontSize: sizes.xxlarge,
+        fontSize: sizes.xlarge,
         fontStyle: 'normal',
+        fontWeight: '300',
         color: colors.primary,
     },
     title: {
-        fontSize: sizes.large*2,
+        fontSize: sizes.xxlarge,
     },
     // get started button
     buttonContainer: {
-        flex: 1,
+        flex: .75,
         justifyContent: 'center',
     },
     button: {
-        height: sizes.large*3,
+        height: sizes.large*2,
         width: 200,
         justifyContent: 'center',
         alignItems: 'center',
@@ -57,7 +55,7 @@ export const styles = StyleSheet.create({
         borderRadius: 100,
         borderColor: colors.tertiary,
         elevation: 3,
-        shadowColor: shadows.primary,
+        shadowColor: shadows.tertiary,
     },
     default: {
         backgroundColor: colors.primary
@@ -70,3 +68,10 @@ export const styles = StyleSheet.create({
         fontSize: sizes.large,
     }
 });
+
+export const LogoGradient = (props) => (
+    <LinearGradient 
+    colors={['#ff8800', colors.primary, colors.secondary, colors.tertiary]}
+    locations={[0, .2, .45, .85]}
+    style={styles.logoContainer}>{props.children}</LinearGradient>
+);
