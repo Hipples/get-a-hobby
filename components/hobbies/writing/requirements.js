@@ -5,13 +5,14 @@ const Requirements = () => (
         <Text style={styles.requirementsHeader}>Requirements:</Text>
         <Text style={styles.requirementsText}>
             Getting started with writing needs nothing more than a way to write down
-            your thoughts - and to have some thoughts to write down! Materials-wise,
-            a computer is very common these days due to its convenience, since you
-            can use spell checks, digital storage, and internet communication to
-            increase your productivity and the reliability of keeping your work safe.
-            There are more and more useful software tools such as Scrivener, which
-            allows you to organize your work, such as scene by scene on a digital
-            corkboard if you're writing a fiction novel.
+            your thoughts - and to have some thoughts to write down! 
+            {'\n\n'}
+            Materials-wise, a computer is very common these days due to its 
+            convenience, since you can use spell checks, digital storage, and internet 
+            communication to increase your productivity and the reliability of keeping
+            your work safe. There are more and more useful software tools such as 
+            Scrivener, which allows you to organize your work, such as scene by scene 
+            on a digital corkboard if you're writing a fiction novel.
             {'\n\n'}
             However, many people prefer more tactile and analog materials, such as
             pen and paper or a notebook, or in some cases even a typewriter. These
