@@ -11,12 +11,12 @@ const Tips = () => (
             snapToInterval={item_width}
             bounces={false}
             showsHorizontalScrollIndicator={false}>
-        {codingTips.map((each) => {
+        {codingTips.map((tip) => {
             return (
-                <View key={each.index} style={styles.tipContainer}>
-                    <Text style={styles.tipHeader}>Tip #{each.index}</Text>
-                    <Text style={styles.tipTitle}>{each.title}</Text>
-                    <Text style={styles.tipText}>{each.explanation}</Text>
+                <View key={tip.index} style={styles.tipContainer}>
+                    <Text style={styles.tipHeader}>Tip #{tip.index}</Text>
+                    <Text style={styles.tipTitle}>{tip.title}</Text>
+                    <Text style={styles.tipText}>{tip.explanation}</Text>
                 </View>
             );
         })}

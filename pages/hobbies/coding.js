@@ -10,7 +10,7 @@ import Tips from '../../components/hobbies/coding/tips';
 
 import { View } from 'react-native';
 import AddLink from '../../components/common/add-link';
-import codingResources from '../../constants/resources';
+import codingResources from '../../constants/coding-resources';
 
 const Resources = () => (
     <View style={styles.resourcesContainer}>
