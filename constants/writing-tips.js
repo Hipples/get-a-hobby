@@ -53,8 +53,8 @@ overwhelmed and miserable. The above advice about good habits was, as mentioned,
 reasons: to mitigate some of the common causes of frustration. Don't let it dominate you. Take \
 breaks. Do what's exciting to you. Don't be afraid to start up a random new side project just \
 to get yourself happy and motivated again, because you always wanted to write a sci-fi space \
-story, or you were really interested in doing a deep-dive a particular political or scientific \
-topic but felt you just didn't have the time for it. Have fun. Always have fun."
+story, or you were really interested in doing a deep-dive into a particular political or scientific \
+topic but felt you just didn't have the time for it. Whatever it is. Have fun. Always have fun."
     }];
 
 export default writingTips;
