@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
         flex: 2,
     },
     message: {
-        color: colors.black,
+        color: colors.white,
         fontSize: sizes.medium,
         fontStyle: 'italic',
         textAlign: 'center',
@@ -36,26 +36,29 @@ export const styles = StyleSheet.create({
         fontSize: sizes.xlarge,
         fontStyle: 'normal',
         fontWeight: '300',
-        color: colors.primary,
     },
     title: {
         fontSize: sizes.xxlarge,
+        lineHeight: sizes.large*2
     },
     // get started button
     buttonContainer: {
-        flex: .75,
+        marginTop: sizes.xxlarge,
+        marginBottom: sizes.large,
         justifyContent: 'center',
+        alignItems: 'center',
+        // container applies 3pt gradient border around button
+        width: 178,
+        height: sizes.large*2+3,
+        borderRadius: 100
     },
     button: {
         height: sizes.large*2,
-        width: 200,
+        width: 175,
         justifyContent: 'center',
         alignItems: 'center',
-        borderWidth: 3,
         borderRadius: 100,
-        borderColor: colors.tertiary,
-        elevation: 3,
-        shadowColor: shadows.tertiary,
+        elevation: 3
     },
     default: {
         backgroundColor: colors.primary
@@ -69,9 +72,18 @@ export const styles = StyleSheet.create({
     }
 });
 
-export const LogoGradient = (props) => (
+export const WelcomeGradient = (props) => (
     <LinearGradient 
-    colors={['#ff8800', colors.primary, colors.secondary, colors.tertiary]}
-    locations={[0, .2, .45, .85]}
-    style={styles.logoContainer}>{props.children}</LinearGradient>
+    colors={[colors.quaternary, colors.primary, colors.secondary, colors.tertiary]}
+    locations={[0, .175, .375, .6]}
+    style={styles.container}>{props.children}</LinearGradient>
 );
+
+export const ButtonBorderGradient = (props) => (
+    <LinearGradient 
+        colors={[colors.quaternary, highlights.primary, colors.secondary, highlights.tertiary]}
+        start={[0, 1]} end={[1, 1]}
+        style={styles.buttonContainer}
+         >{props.children}
+    </LinearGradient>
+)

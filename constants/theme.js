@@ -2,6 +2,7 @@ export const colors = {
     primary: "#1f6818",
     secondary: "#437f7a",
     tertiary: "#261650",
+    quaternary: "#ff8800",
 
     white: "#fdf9f7",
     gray: "#b1b5b9",
@@ -16,6 +17,7 @@ export const shadows = {
 export const highlights = {
     primary: '#599d53',
     secondary: '#5fc4bb',
+    tertiary: '#7155b9'
 }
 
 export const sizes = {

@@ -1,10 +1,10 @@
 import { View, Pressable, Text } from 'react-native';
 
-import { styles } from './welcome-styles';
+import { styles, ButtonBorderGradient } from './welcome-styles';
 
 // button to go from welcome --> home screen
 const GetStartedButton = ({ navigation }) => (
-    <View style={styles.buttonContainer}>
+    <ButtonBorderGradient>
         <Pressable 
             style={({ pressed }) => [
                 styles.button,
@@ -12,7 +12,7 @@ const GetStartedButton = ({ navigation }) => (
             onPress={() => navigation.navigate('Home')} >
             <Text style={styles.buttonText}>Get Started!</Text>
         </Pressable>
-    </View>
+    </ButtonBorderGradient>
 );
 
 export default GetStartedButton;

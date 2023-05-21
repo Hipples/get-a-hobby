@@ -11,7 +11,7 @@ const WelcomeMessage = () => (
                 {"\n"}GetAHobby!{"\n"}
                 </Text>
             </Text>
-            {"\n\n"}Whether you're looking to relax, get creative,
+            {"\n"}Whether you're looking to relax, get creative,
             or learn something new, we've got you covered. 
             {"\n\n"}
             <Text style={{fontStyle: 'normal'}}>

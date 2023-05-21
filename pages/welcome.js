@@ -5,16 +5,15 @@ import DisplayLogo from '../components/welcome/display-logo';
 import WelcomeMessage from '../components/welcome/welcome-message';
 import GetStartedButton from '../components/welcome/get-started-button';
 
-import { styles } from '../components/welcome/welcome-styles';
-import { colors } from '../constants/theme';
+import { WelcomeGradient } from '../components/welcome/welcome-styles';
 
 const Welcome = ({ navigation }) => (
-    <View style={styles.container}>
-        <StatusBar style='auto' backgroundColor={colors.gray}/>
+    <WelcomeGradient>
+        <StatusBar style='auto' />
         <DisplayLogo />
         <WelcomeMessage />
         <GetStartedButton navigation={navigation} />
-    </View>
+    </WelcomeGradient>
 );
 
 export default Welcome;
