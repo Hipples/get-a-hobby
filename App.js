@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import Welcome from './pages/welcome';
 import Home from './pages/home';
+import Hobbies from './pages/hobbies';
 import Coding from './pages/hobbies/coding';
 import Volleyball from './pages/hobbies/volleyball';
 import Writing from './pages/hobbies/writing';
@@ -30,6 +31,9 @@ const App = () => {
                 <Stack.Screen
                     name="Writing"
                     component={Writing} />
+                <Stack.Screen
+                    name="Hobbies"
+                    component={Hobbies} />
             </Stack.Navigator>
         </NavigationContainer>
     );
