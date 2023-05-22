@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet } from 'react-native';
 
-import Title from '../../components/hobbies/writing/title';
+import HobbyTitle from '../../components/common/hobby-pages/hobby-title';
 import DisplayImage from '../../components/hobbies/writing/display-image';
 import Difficulty from '../../components/hobbies/writing/difficulty';
 import Description from '../../components/hobbies/writing/description';
@@ -26,7 +26,7 @@ const Writing = () => (
     <ScrollView 
         contentContainerStyle={styles.container}
         persistentScrollbar={true} >
-        <Title />
+        <HobbyTitle hobby="Writing"/>
         <DisplayImage />
         <Difficulty />
         <Description />
