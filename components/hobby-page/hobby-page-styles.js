@@ -73,6 +73,28 @@ export const styles = StyleSheet.create({
         color: "#000",
         paddingVertical: 10
     },
+    healthAndSafetyContainer: {
+        height: 430,
+        backgroundColor: '#EFEFEF',
+        borderWidth: 2,
+        marginHorizontal: 10,
+        padding: 10,
+        marginBottom: 10,
+        justifyContent: 'space-around'
+    },
+    healthAndSafetyHeader: {
+        fontSize: 25,
+        fontWeight: 'bold',
+        color: "#338",
+        paddingVertical: 15,
+        paddingHorizontal: 5
+    },
+    healthAndSafetyText: {
+        fontSize: 20,
+        color: "#000",
+        paddingVertical: 15,
+        paddingHorizontal: 5
+    },
     tipContainer: {
         justifyContent: 'space-around',
         height: 600,

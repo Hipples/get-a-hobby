@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 
-import Hyperlink from '../hyperlink';
+import Hyperlink from '../common/hyperlink';
 import { styles } from './hobby-page-styles';
 
 const HobbyResources = ({ hyperlinks }) => (

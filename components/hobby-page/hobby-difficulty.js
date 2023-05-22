@@ -1,4 +1,4 @@
-import DifficultyRating from '../difficulty-rating';
+import DifficultyRating from '../common/difficulty-rating';
 
 const HobbyDifficulty = ({ rating }) => (
     <DifficultyRating 
