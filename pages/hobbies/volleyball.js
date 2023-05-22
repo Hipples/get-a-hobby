@@ -2,7 +2,7 @@ import { ScrollView } from 'react-native';
 
 import HobbyTitle from '../../components/common/hobby-pages/hobby-title';
 import HobbyImage from '../../components/common/hobby-pages/hobby-image';
-import Difficulty from '../../components/hobbies/volleyball/difficulty';
+import HobbyDifficulty from '../../components/common/hobby-pages/hobby-difficulty';
 import Description from '../../components/hobbies/volleyball/description';
 import Requirements from '../../components/hobbies/volleyball/requirements';
 import HealthAndSafety from '../../components/hobbies/volleyball/health-and-safety';
@@ -20,7 +20,7 @@ const Volleyball = () => (
         persistentScrollbar={true} >
         <HobbyTitle hobby="Volleyball" />
         <HobbyImage image={volleyballImage} />
-        <Difficulty />
+        <HobbyDifficulty rating={5}/>
         <Description />
         <Requirements />
         <HealthAndSafety />

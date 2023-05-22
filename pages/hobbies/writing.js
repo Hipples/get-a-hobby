@@ -2,7 +2,7 @@ import { ScrollView } from 'react-native';
 
 import HobbyTitle from '../../components/common/hobby-pages/hobby-title';
 import HobbyImage from '../../components/common/hobby-pages/hobby-image';
-import Difficulty from '../../components/hobbies/writing/difficulty';
+import HobbyDifficulty from '../../components/common/hobby-pages/hobby-difficulty';
 import Description from '../../components/hobbies/writing/description';
 import Requirements from '../../components/hobbies/writing/requirements';
 import HealthAndSafety from '../../components/hobbies/writing/health-and-safety';
@@ -20,13 +20,12 @@ const Writing = () => (
         persistentScrollbar={true} >
         <HobbyTitle hobby="Writing"/>
         <HobbyImage image={writingImage} />
-        <Difficulty />
+        <HobbyDifficulty rating={2}/>
         <Description />
         <Requirements />
         <HealthAndSafety />
         <Tips />
         <HobbyResources hyperlinks={writingResources}/>
-
     </ScrollView>
 );
 
