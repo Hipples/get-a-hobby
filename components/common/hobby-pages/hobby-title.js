@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native';
 
-import { styles } from './hobby-pages-styles';
+import { styles } from './hobby-page-styles';
 
 const HobbyTitle = (props) => (
     <View style={styles.titleContainer}>

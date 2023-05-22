@@ -1,6 +1,11 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
+    container: {
+        justifyContent: 'flex-start',
+        alignItems: 'stretch',
+        backgroundColor: "#666"
+    },
     titleContainer: {
         height: 75,
         borderWidth: 2,
@@ -11,5 +16,10 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 35,
         color: '#EFEFEF'
+    },
+    resourcesContainer: {
+        height: 500,
+        borderWidth: 2,
+        marginHorizontal: 10
     }
 });

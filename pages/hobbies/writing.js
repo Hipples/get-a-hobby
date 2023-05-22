@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet } from 'react-native';
+import { ScrollView } from 'react-native';
 
 import HobbyTitle from '../../components/common/hobby-pages/hobby-title';
 import DisplayImage from '../../components/hobbies/writing/display-image';
@@ -7,20 +7,10 @@ import Description from '../../components/hobbies/writing/description';
 import Requirements from '../../components/hobbies/writing/requirements';
 import HealthAndSafety from '../../components/hobbies/writing/health-and-safety';
 import Tips from '../../components/hobbies/writing/tips'
+import HobbyResources from '../../components/common/hobby-pages/hobby-resources';
 
-import { View } from 'react-native';
-import AddLink from '../../components/common/hyperlink';
+import { styles } from '../../components/common/hobby-pages/hobby-page-styles';
 import writingResources from '../../constants/writing-resources';
-
-const Resources = () => (
-    <View style={styles.resourcesContainer}>
-        {writingResources.map((link) => (
-            <View key={link.index}>
-                <AddLink url={link.url}>{link.title}{'\n'}</AddLink>
-            </View>
-        ))}
-    </View>
-);
 
 const Writing = () => (
     <ScrollView 
@@ -33,24 +23,9 @@ const Writing = () => (
         <Requirements />
         <HealthAndSafety />
         <Tips />
-        <Resources />
+        <HobbyResources hyperlinks={writingResources}/>
 
     </ScrollView>
 );
-
-const styles = StyleSheet.create({
-    container: {
-        justifyContent: 'flex-start',
-        alignItems: 'stretch',
-        backgroundColor: "#666",
-        padding: 15
-    },
-    resourcesContainer: {
-        height: 730,
-        borderWidth: 2,
-        marginHorizontal: 10,
-        padding: 20
-    }
-});
 
 export default Writing;

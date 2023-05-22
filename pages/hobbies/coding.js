@@ -7,20 +7,10 @@ import Description from '../../components/hobbies/coding/description';
 import Requirements from '../../components/hobbies/coding/requirements';
 import HealthAndSafety from '../../components/hobbies/coding/health-and-safety';
 import Tips from '../../components/hobbies/coding/tips';
+import HobbyResources from '../../components/common/hobby-pages/hobby-resources';
 
-import { View } from 'react-native';
-import AddLink from '../../components/common/hyperlink';
+import { styles } from '../../components/common/hobby-pages/hobby-page-styles'
 import codingResources from '../../constants/coding-resources';
-
-const Resources = () => (
-    <View style={styles.resourcesContainer}>
-        {codingResources.map((link) => (
-            <View key={link.index}>
-                <AddLink url={link.url}>{link.title}{'\n'}</AddLink>
-            </View>
-        ))}
-    </View>
-);
 
 const Coding = () => (
     <ScrollView 
@@ -33,22 +23,9 @@ const Coding = () => (
         <Requirements />
         <HealthAndSafety />
         <Tips />
-        <Resources />
+        <HobbyResources hyperlinks={codingResources}/>
 
     </ScrollView>
 );
-
-const styles = StyleSheet.create({
-    container: {
-        justifyContent: 'flex-start',
-        alignItems: 'stretch',
-        backgroundColor: "#666"
-    },
-    resourcesContainer: {
-        height: 500,
-        borderWidth: 2,
-        marginHorizontal: 10
-    }
-});
 
 export default Coding;
