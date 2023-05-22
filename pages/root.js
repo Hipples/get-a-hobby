@@ -1,12 +1,16 @@
 import { View, StyleSheet, Pressable, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import Home from './home';
 import Hobbies from './hobbies';
 
 const Tab = createBottomTabNavigator();
 
-const Home = () => (
+const Root = () => (
     <Tab.Navigator>
+        <Tab.Screen
+            name="Home"
+            component={Home} />
         <Tab.Screen
             name="Explore"
             component={Hobbies} />
@@ -25,4 +29,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Home;
+export default Root;

@@ -22,7 +22,7 @@ const App = () => {
                 <Stack.Screen 
                     name="Home" 
                     component={Home} />
-                <Stack.Screen
+                {/* <Stack.Screen
                     name="Coding"
                     component={Coding} />
                 <Stack.Screen
@@ -33,7 +33,7 @@ const App = () => {
                     component={Writing} />
                 <Stack.Screen
                     name="Hobbies"
-                    component={Hobbies} />
+                    component={Hobbies} /> */}
             </Stack.Navigator>
         </NavigationContainer>
     );
