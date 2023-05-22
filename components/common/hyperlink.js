@@ -3,7 +3,7 @@ import { Alert, Linking, Pressable, Text, StyleSheet } from 'react-native';
 
 // tested with 'https://google.com'
 // pass url, children, linkStyle props for customization
-const AddLink = ( props ) => {
+const Hyperlink = ( props ) => {
     const handlePress = useCallback(async () => {
         // checking if link is supported
         const supported = await Linking.canOpenURL(props.url);
@@ -35,4 +35,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AddLink;
+export default Hyperlink;
