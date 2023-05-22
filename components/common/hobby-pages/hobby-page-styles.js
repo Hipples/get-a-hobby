@@ -17,6 +17,20 @@ export const styles = StyleSheet.create({
         fontSize: 35,
         color: '#EFEFEF'
     },
+    imageContainer: {
+        height: 300,
+        marginHorizontal: 10,
+        marginBottom: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 2,
+        backgroundColor: "#666"
+    },
+    image: {
+        height: 350,
+        width: 350,
+        resizeMode: 'contain'
+    },
     resourcesContainer: {
         height: 500,
         borderWidth: 2,

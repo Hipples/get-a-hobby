@@ -1,7 +1,7 @@
 import { ScrollView } from 'react-native';
 
 import HobbyTitle from '../../components/common/hobby-pages/hobby-title';
-import DisplayImage from '../../components/hobbies/writing/display-image';
+import HobbyImage from '../../components/common/hobby-pages/hobby-image';
 import Difficulty from '../../components/hobbies/writing/difficulty';
 import Description from '../../components/hobbies/writing/description';
 import Requirements from '../../components/hobbies/writing/requirements';
@@ -12,12 +12,14 @@ import HobbyResources from '../../components/common/hobby-pages/hobby-resources'
 import { styles } from '../../components/common/hobby-pages/hobby-page-styles';
 import writingResources from '../../constants/writing-resources';
 
+const writingImage = require('../../assets/writing_desk.jpeg');
+
 const Writing = () => (
     <ScrollView 
         contentContainerStyle={styles.container}
         persistentScrollbar={true} >
         <HobbyTitle hobby="Writing"/>
-        <DisplayImage />
+        <HobbyImage image={writingImage} />
         <Difficulty />
         <Description />
         <Requirements />
