@@ -9,7 +9,7 @@ import HealthAndSafety from '../../components/hobbies/writing/health-and-safety'
 import Tips from '../../components/hobbies/writing/tips'
 
 import { View } from 'react-native';
-import AddLink from '../../components/common/add-link';
+import AddLink from '../../components/common/hyperlink';
 import writingResources from '../../constants/writing-resources';
 
 const Resources = () => (

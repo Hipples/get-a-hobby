@@ -9,7 +9,7 @@ import HealthAndSafety from '../../components/hobbies/volleyball/health-and-safe
 import Tips from '../../components/hobbies/volleyball/tips';
 
 import { View } from 'react-native';
-import AddLink from '../../components/common/add-link';
+import AddLink from '../../components/common/hyperlink';
 import volleyballResources from '../../constants/volleyball-resources';
 
 const Resources = () => (

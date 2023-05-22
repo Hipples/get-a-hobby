@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet } from 'react-native';
 
-import Title from '../../components/hobbies/coding/title';
+import HobbyTitle from '../../components/common/hobby-pages/hobby-title';
 import DisplayImage from '../../components/hobbies/coding/display-image';
 import Difficulty from '../../components/hobbies/coding/difficulty';
 import Description from '../../components/hobbies/coding/description';
@@ -9,7 +9,7 @@ import HealthAndSafety from '../../components/hobbies/coding/health-and-safety';
 import Tips from '../../components/hobbies/coding/tips';
 
 import { View } from 'react-native';
-import AddLink from '../../components/common/add-link';
+import AddLink from '../../components/common/hyperlink';
 import codingResources from '../../constants/coding-resources';
 
 const Resources = () => (
@@ -26,7 +26,7 @@ const Coding = () => (
     <ScrollView 
         contentContainerStyle={styles.container}
         persistentScrollbar={true} >
-        <Title />
+        <HobbyTitle hobby="Coding" />
         <DisplayImage />
         <Difficulty />
         <Description />
