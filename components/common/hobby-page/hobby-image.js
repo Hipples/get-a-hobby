@@ -1,6 +1,6 @@
 import { View, Image } from 'react-native';
 
-import { styles } from '../hobby-pages/hobby-page-styles';
+import { styles } from './hobby-page-styles';
 
 const HobbyImage = ({ image }) => (
     <View style={styles.imageContainer}>
