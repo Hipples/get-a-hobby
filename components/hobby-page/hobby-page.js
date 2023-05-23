@@ -1,4 +1,4 @@
-import { ScrollView } from 'react-native';
+import { ScrollView, SafeAreaView } from 'react-native';
 
 import HobbyTitle from '../../components/hobby-page/hobby-title';
 import HobbyImage from '../../components/hobby-page/hobby-image';
@@ -12,18 +12,20 @@ import HobbyResources from '../../components/hobby-page/hobby-resources';
 import { styles } from '../hobby-page/hobby-page-styles';
 
 const HobbyPage = ( props ) => (
-    <ScrollView 
-        contentContainerStyle={styles.container}
-        persistentScrollbar={true} >
-        <HobbyTitle hobby={props.title} />
-        <HobbyImage image={props.image} />
-        <HobbyDifficulty rating={props.rating} />
-        <HobbyDescription description={props.description}/>
-        <HobbyRequirements requirements={props.requirements}/>
-        <HobbyHealthAndSafety healthAndSafety={props.healthAndSafety}/>
-        <HobbyTips tips={props.tips} />
-        <HobbyResources hyperlinks={props.resources}/>
-    </ScrollView>
+    <SafeAreaView>
+        <ScrollView 
+            contentContainerStyle={styles.container}
+            persistentScrollbar={true} >
+            <HobbyTitle hobby={props.title} />
+            <HobbyImage image={props.image} />
+            <HobbyDifficulty rating={props.rating} />
+            <HobbyDescription description={props.description}/>
+            <HobbyRequirements requirements={props.requirements}/>
+            <HobbyHealthAndSafety healthAndSafety={props.healthAndSafety}/>
+            <HobbyTips tips={props.tips} />
+            <HobbyResources hyperlinks={props.resources}/>
+        </ScrollView>
+    </SafeAreaView>
 );
 
 export default HobbyPage;

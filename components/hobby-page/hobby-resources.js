@@ -7,7 +7,11 @@ const HobbyResources = ({ hyperlinks }) => (
     <View style={styles.resourcesContainer}>
         {hyperlinks.map((link) => (
             <View key={link.index}>
-                <Hyperlink url={link.url}>{link.title}{'\n'}</Hyperlink>
+                <Hyperlink 
+                    linkStyle={styles.resourceLinks}
+                    url={link.url}>
+                    {link.title}{'\n'}
+                </Hyperlink>
             </View>
         ))}
     </View>

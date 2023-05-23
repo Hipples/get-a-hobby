@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
-import { Alert, Linking, Pressable, Text, StyleSheet } from 'react-native';
+import { Alert, Linking, Pressable, Text } from 'react-native';
 
-// tested with 'https://google.com'
 // pass url, children, linkStyle props for customization
 const Hyperlink = ( props ) => {
     const handlePress = useCallback(async () => {
@@ -18,21 +17,11 @@ const Hyperlink = ( props ) => {
     return (
         <Pressable 
             onPress={handlePress}>
-            <Text style={[
-                styles.link, 
-                props.linkStyle]}>
+            <Text style={props.linkStyle}>
                 {props.children}
             </Text>
         </Pressable>
     );
 }
-
-// passing to linkStyle will override any default styles
-const styles = StyleSheet.create({
-    link: {
-        color: 'white',
-        fontSize: 20
-    }
-});
 
 export default Hyperlink;

@@ -1,5 +1,9 @@
 import { View, Modal, Text, Pressable, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { Image } from 'react-native';
+import { Rating } from 'react-native-ratings';
 
+const infoIcon = require('../../assets/info-icon.png');
 //pop-up modal to explain difficulty rating system
 const RatingsInfoModal = ({ modalVisible, setModalVisible }) => (
     <View>
@@ -28,6 +32,39 @@ const RatingsInfoModal = ({ modalVisible, setModalVisible }) => (
     </View>
 );
 
+const RatingStars = () => { 
+    const [modalVisible, setModalVisible] = useState(false);
+    
+    return (
+        <View>        
+            <View style={{flexDirection: 'row'}}>
+
+                <RatingsInfoModal 
+                    modalVisible={modalVisible}
+                    setModalVisible={setModalVisible} />
+
+                <Text>
+                    Difficulty Rating
+                </Text>
+
+                <Pressable
+                    onPress={() => setModalVisible(true)}>
+                    <Image 
+                        source={infoIcon}
+                        />
+                </Pressable>
+            </View>
+        <View>
+        <Rating 
+            readonly={true}  // user cannot modify star display
+            ratingCount={5}  // easy, novice, intermediate, advanced, expert
+            startingValue={props.rating}  // sets number of filled stars to reflect rating
+            style={props.starStyle} />
+        </View>
+    </View>
+    );
+}
+    
 //TODO
 const styles = StyleSheet.create({
     modalView: {
@@ -63,5 +100,3 @@ const styles = StyleSheet.create({
         textAlign: 'left',
     }
 });
-
-export default RatingsInfoModal;
