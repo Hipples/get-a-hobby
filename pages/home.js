@@ -3,27 +3,20 @@ import { View, StyleSheet, Pressable, Text } from 'react-native';
 
 const Home = ({ navigation }) => (
     <View style={styles.container}>
-        <Pressable onPress={() => navigation.navigate("Coding")}>
-            <Text>Preview Coding</Text>
-        </Pressable>
-        <Pressable onPress={() => navigation.navigate("Volleyball")}>
-            <Text>Volleyball</Text>
-        </Pressable>
-        <Pressable onPress={() => navigation.navigate("Writing")}>
-            <Text>Writing</Text>
-        </Pressable>
         <Pressable onPress={() => navigation.navigate("Hobbies")}>
             <Text>Hobbies</Text>
         </Pressable>
     </View>
 );
 
+import { colors } from '../constants/theme';
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: "#555"
+        backgroundColor: colors.gray
     }
 });
 

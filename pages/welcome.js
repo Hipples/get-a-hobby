@@ -1,4 +1,3 @@
-import { View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 
 import DisplayLogo from '../components/welcome/display-logo';
