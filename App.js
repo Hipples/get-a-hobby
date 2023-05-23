@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 import Welcome from './pages/welcome';
 import Home from './pages/home';
@@ -14,7 +15,21 @@ const Tab = createBottomTabNavigator();
 const HobbyStack = createNativeStackNavigator();
 
 const Root = () => (
-    <Tab.Navigator>
+    <Tab.Navigator
+        screenOptions={ ({ route }) => ({
+            tabBarIcon: ({ focused }) => {
+                let iconName;
+
+                if (route.name === 'Home') {
+                    iconName = focused
+                        ? 'home' : 'arrow-left';
+                } else if (route.name === 'Explore Hobbies') {
+                    iconName = focused
+                        ? 'book-open' : 'book';
+                }
+                return <FontAwesome5 name={iconName} size={24} color="black" />
+            }}
+        )}>
         <Tab.Screen name='Home' component={Home} />
         <Tab.Screen name='Explore Hobbies' component={HobbyPages} />
     </Tab.Navigator>
