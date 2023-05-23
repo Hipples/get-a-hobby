@@ -47,9 +47,9 @@ export const styles = StyleSheet.create({
         marginBottom: sizes.large,
         justifyContent: 'center',
         alignItems: 'center',
-        // container applies 3pt gradient border around button
-        width: 178,
-        height: sizes.large*2+3,
+        // container applies 4pt gradient border around button
+        width: 179,
+        height: sizes.large*2+4,
         borderRadius: 100
     },
     button: {
@@ -86,4 +86,4 @@ export const ButtonBorderGradient = (props) => (
         style={styles.buttonContainer}
          >{props.children}
     </LinearGradient>
-)
+);

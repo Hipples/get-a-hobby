@@ -24,7 +24,8 @@ const App = () => {
                     component={Home} />
                 <Stack.Screen
                     name="Coding"
-                    component={Coding} />
+                    component={Coding}
+                    options={{headerShown: false}} />
                 <Stack.Screen
                     name="Volleyball"
                     component={Volleyball} />

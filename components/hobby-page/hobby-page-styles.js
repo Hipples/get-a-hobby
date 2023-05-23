@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     titleContainer: {
         borderBottomWidth: 1,
         borderColor: shadows.primary,
-        marginHorizontal: sizes.xsmall,
+        margin: sizes.xsmall,
         paddingTop: sizes.medium
     },
     titleText: {
@@ -27,26 +27,9 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
     },
     image: {
-        height: 325,
-        width: 325,
+        height: 350,
+        width: 350,
         resizeMode: 'cover'
-    },
-    contentContainer: {
-        marginHorizontal: sizes.xsmall,
-        padding: sizes.xsmall
-    },
-    contentHeader: {
-        fontSize: sizes.large,
-        fontWeight: '300',
-        color: colors.tertiary,
-        borderBottomWidth: 1,
-        borderColor: shadows.primary
-    },
-    contentText: {
-        fontSize: sizes.medium,
-        color: colors.black,
-        paddingVertical: 10,
-        fontWeight: '300'
     },
     ratingHeader: {
         flexDirection: 'row',
@@ -56,7 +39,6 @@ export const styles = StyleSheet.create({
     },
     ratingHeaderText: {
         fontSize: sizes.large,
-        fontWeight: '300',
         color: colors.tertiary,
     },
     infoButton: {
@@ -75,6 +57,21 @@ export const styles = StyleSheet.create({
     stars: {
         alignSelf: 'flex-start',
         imageSize: sizes.large,
+    },
+    contentContainer: {
+        margin: sizes.xsmall,
+    },
+    contentHeader: {
+        fontSize: sizes.large,
+        color: colors.tertiary,
+        borderBottomWidth: 1,
+        borderColor: shadows.primary
+    },
+    contentText: {
+        fontSize: sizes.medium,
+        color: colors.black,
+        paddingVertical: 10,
+        fontWeight: '300'
     },
     tipContainer: {
         flex: 1,
