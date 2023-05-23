@@ -26,11 +26,14 @@ const DifficultyRating = ( props ) => {
                 </Pressable>
             </View>
             <Rating 
+                type='custom'
                 resize='contain'
                 readonly={true}  // user cannot modify star display
                 ratingCount={5}  // easy, novice, intermediate, advanced, expert
                 startingValue={props.rating}  // sets number of filled stars to reflect rating
-                style={props.stylesStars} />
+                style={props.starPosition}
+                imageSize={props.starSize} 
+                tintColor={props.starBackground}/>
         </View>
     );
 }

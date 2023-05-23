@@ -7,128 +7,74 @@ export const itemWidth = Dimensions.get('window').width
 export const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
-        justifyContent: 'space-between',
-        backgroundColor: colors.secondary
+        backgroundColor: colors.gray
     },
     titleContainer: {
-        flex: 1,
-        borderWidth: 2,
-        padding: 10,
-        margin: 10
+        borderBottomWidth: 1,
+        borderColor: shadows.primary,
+        marginHorizontal: sizes.xsmall,
+        paddingTop: sizes.medium
     },
     titleText: {
         textAlign: 'center',
-        fontSize: 35,
-        color: colors.black
+        fontSize: sizes.large*2,
+        color: colors.tertiary,
+        fontWeight: '300',
     },
     imageContainer: {
-        flex: 1,
-        marginHorizontal: 10,
-        marginBottom: 10,
-        justifyContent: 'center',
+        marginHorizontal: sizes.xsmall,
+        padding: sizes.xsmall,
         alignItems: 'center',
-        borderWidth: 2,
-        backgroundColor: "#666"
     },
     image: {
-        flex: 1,
-        height: 350,
-        width: 350,
-        resizeMode: 'contain'
+        height: 325,
+        width: 325,
+        resizeMode: 'cover'
     },
-    ratingContainer: {
-        borderWidth: 2,
-        marginHorizontal: 10,
-        marginBottom: 10,
-        padding: 10
+    contentContainer: {
+        marginHorizontal: sizes.xsmall,
+        padding: sizes.xsmall
+    },
+    contentHeader: {
+        fontSize: sizes.large,
+        fontWeight: '300',
+        color: colors.tertiary,
+        borderBottomWidth: 1,
+        borderColor: shadows.primary
+    },
+    contentText: {
+        fontSize: sizes.medium,
+        color: colors.black,
+        paddingVertical: 10,
+        fontWeight: '300'
     },
     ratingHeader: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        borderBottomWidth: 1,
+        borderColor: shadows.primary,
+        marginBottom: sizes.xsmall
     },
     ratingHeaderText: {
         fontSize: sizes.large,
-        fontWeight: 'bold',
-        color: colors.black
+        fontWeight: '300',
+        color: colors.tertiary,
     },
     infoButton: {
-        marginLeft: sizes.xsmall
+        marginLeft: sizes.xxsmall,
+        height: sizes.medium+1,
+        borderRadius: (sizes.medium+1) / 2,
+        justifyContent: 'space-around',
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: shadows.tertiary,
+        elevation: 3
     },
     infoIcon: {
         height: sizes.medium,
-        width: sizes.medium
+        width: sizes.medium,
     },
     stars: {
-        paddingVertical: sizes.xsmall,
-        alignSelf: 'flex-start'
-    },
-    descriptionContainer: {
-        flex: 1,
-        height: 500,
-        backgroundColor: '#EFEFEF',
-        borderWidth: 2,
-        marginHorizontal: 10,
-        padding: 10,
-        marginBottom: 10,
-        justifyContent: 'space-around'
-    },
-    descriptionHeader: {
-        fontSize: 25,
-        fontWeight: 'bold',
-        color: "#338",
-        padding: 5
-    },
-    descriptionText: {
-        fontSize: 20,
-        color: colors.black,
-        paddingVertical: 10
-    },
-    requirementsContainer: {
-        flex: 1,
-        height: 700,
-        backgroundColor: '#EFEFEF',
-        borderWidth: 2,
-        marginHorizontal: 10,
-        padding: 10,
-        marginBottom: 10,
-        justifyContent: 'space-around'
-    },
-    requirementsHeader: {
-        flex: 1,
-        fontSize: 25,
-        fontWeight: 'bold',
-        color: colors.black,
-        padding: 5
-    },
-    requirementsText: {
-        flex: 1,
-        fontSize: 20,
-        color: colors.black,
-        paddingVertical: 10
-    },
-    healthAndSafetyContainer: {
-        flex: 1,
-        height: 430,
-        backgroundColor: '#EFEFEF',
-        borderWidth: 2,
-        marginHorizontal: 10,
-        padding: 10,
-        marginBottom: 10,
-        justifyContent: 'space-around'
-    },
-    healthAndSafetyHeader: {
-        flex: 1,
-        fontSize: 25,
-        fontWeight: 'bold',
-        color: colors.black,
-        paddingVertical: 15,
-        paddingHorizontal: 5
-    },
-    healthAndSafetyText: {
-        flex: 1,
-        fontSize: 20,
-        color: colors.black,
-        paddingVertical: 15,
-        paddingHorizontal: 5
+        alignSelf: 'flex-start',
+        imageSize: sizes.large,
     },
     tipContainer: {
         flex: 1,
