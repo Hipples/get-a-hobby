@@ -1,12 +1,11 @@
 import { View, StyleSheet, Pressable, Text } from 'react-native';
 
-
 const Home = ({ navigation }) => (
     <View style={styles.container}>
-        <Pressable onPress={() => navigation.navigate("Hobbies")}>
-            <Text>Hobbies</Text>
-        </Pressable>
-    </View>
+            <Pressable onPress={() => navigation.navigate("Hobbies")}>
+                <Text>GetAHobby</Text>
+            </Pressable>
+        </View>
 );
 
 import { colors } from '../constants/theme';
