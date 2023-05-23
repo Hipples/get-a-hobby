@@ -1,11 +1,11 @@
-import { View, StyleSheet, Pressable, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+
+import GetAHobbyButton from '../components/home/get-a-hobby-button';
 
 const Home = ({ navigation }) => (
     <View style={styles.container}>
-            <Pressable onPress={() => navigation.navigate("Hobbies")}>
-                <Text>GetAHobby</Text>
-            </Pressable>
-        </View>
+        <GetAHobbyButton navigation={navigation}/>        
+    </View>
 );
 
 import { colors } from '../constants/theme';
