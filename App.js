@@ -1,4 +1,4 @@
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, CommonActions } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -16,7 +16,9 @@ const ExploreStack = createNativeStackNavigator();
 
 export const ExploreHobbies = () => (
     <ExploreStack.Navigator id="Hobbies" initialRouteName='Hobbies'>
+        {/* list of hobbies */}
         <ExploreStack.Screen name="Hobbies" component={Hobbies} />
+        {/* individual hobby pages */}
         <ExploreStack.Screen name="Coding" component={Coding} />
         <ExploreStack.Screen name="Volleyball" component={Volleyball} />
         <ExploreStack.Screen name="Writing" component={Writing} />
@@ -40,7 +42,9 @@ const Root = () => (
             }}
         )}>
         <Tab.Screen name='Home' component={Home} />
-        <Tab.Screen name='Explore Hobbies' component={ExploreHobbies} />
+        <Tab.Screen name='Explore Hobbies' component={ExploreHobbies}
+            listeners = {({ navigation }) => ({ tabPress: () => {    
+                navigation.dispatch(CommonActions.navigate({name: 'Hobbies'}))}})} />
     </Tab.Navigator>
 );
 
