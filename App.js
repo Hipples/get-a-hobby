@@ -1,4 +1,4 @@
-import { NavigationContainer, CommonActions } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -10,27 +10,26 @@ import Coding from './pages/hobbies/coding';
 import Volleyball from './pages/hobbies/volleyball';
 import Writing from './pages/hobbies/writing';
 
-const Stack = createNativeStackNavigator();
-const Tab = createBottomTabNavigator();
-const ExploreStack = createNativeStackNavigator();
+const WelcomeStack = createNativeStackNavigator();
+const HomeTabs = createBottomTabNavigator();
+const HobbyStack = createNativeStackNavigator();
 
-export const ExploreHobbies = () => (
-    <ExploreStack.Navigator id="Hobbies" initialRouteName='Hobbies'>
+export const HobbiesNav = () => (
+    <HobbyStack.Navigator initialRouteName='Hobbies' >
         {/* list of hobbies */}
-        <ExploreStack.Screen name="Hobbies" component={Hobbies} />
+        <HobbyStack.Screen name="Hobbies" component={Hobbies} />
         {/* individual hobby pages */}
-        <ExploreStack.Screen name="Coding" component={Coding} />
-        <ExploreStack.Screen name="Volleyball" component={Volleyball} />
-        <ExploreStack.Screen name="Writing" component={Writing} />
-    </ExploreStack.Navigator>
+        <HobbyStack.Screen name="Coding" component={Coding} />
+        <HobbyStack.Screen name="Volleyball" component={Volleyball} />
+        <HobbyStack.Screen name="Writing" component={Writing} />
+    </HobbyStack.Navigator>
 );
 
-const Root = () => (
-    <Tab.Navigator
+const RootNav = () => (
+    <HomeTabs.Navigator
         screenOptions={ ({ route }) => ({
             tabBarIcon: ({ focused }) => {
                 let iconName;
-
                 if (route.name === 'Home') {
                     iconName = focused
                         ? 'home' : 'arrow-left';
@@ -40,26 +39,25 @@ const Root = () => (
                 }
                 return <FontAwesome5 name={iconName} size={24} color="black" />
             }}
-        )}>
-        <Tab.Screen name='Home' component={Home} />
-        <Tab.Screen name='Explore Hobbies' component={ExploreHobbies}
-            listeners = {({ navigation }) => ({ tabPress: () => {    
-                navigation.dispatch(CommonActions.navigate({name: 'Hobbies'}))}})} />
-    </Tab.Navigator>
+        )} >
+        <HomeTabs.Screen name='Home' component={Home} />
+        <HomeTabs.Screen name='Explore Hobbies' component={HobbiesNav}
+            screenOptions={{ unmountOnBlur: true }} />
+    </HomeTabs.Navigator>
 );
 
 const App = () => (
     <NavigationContainer>
-        <Stack.Navigator initialRouteName="Welcome">
-            <Stack.Screen 
+        <WelcomeStack.Navigator initialRouteName="Welcome" >
+            <WelcomeStack.Screen 
                 name="Welcome" 
                 component={Welcome}
                 options={{headerShown: false}} />
-            <Stack.Screen
+            <WelcomeStack.Screen
                 name="Root"
-                component={Root}
+                component={RootNav}
                 options={{headerShown: false}} />
-        </Stack.Navigator>
+        </WelcomeStack.Navigator>
     </NavigationContainer>
 );
 
