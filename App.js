@@ -12,7 +12,16 @@ import Writing from './pages/hobbies/writing';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-const HobbyStack = createNativeStackNavigator();
+const ExploreStack = createNativeStackNavigator();
+
+export const ExploreHobbies = () => (
+    <ExploreStack.Navigator id="Hobbies" initialRouteName='Hobbies'>
+        <ExploreStack.Screen name="Hobbies" component={Hobbies} />
+        <ExploreStack.Screen name="Coding" component={Coding} />
+        <ExploreStack.Screen name="Volleyball" component={Volleyball} />
+        <ExploreStack.Screen name="Writing" component={Writing} />
+    </ExploreStack.Navigator>
+);
 
 const Root = () => (
     <Tab.Navigator
@@ -31,17 +40,8 @@ const Root = () => (
             }}
         )}>
         <Tab.Screen name='Home' component={Home} />
-        <Tab.Screen name='Explore Hobbies' component={HobbyPages} />
+        <Tab.Screen name='Explore Hobbies' component={ExploreHobbies} />
     </Tab.Navigator>
-);
-
-const HobbyPages = () => (
-    <HobbyStack.Navigator initialRouteName='Hobbies'>
-        <HobbyStack.Screen name="Hobbies" component={Hobbies} />
-        <HobbyStack.Screen name="Coding" component={Coding} />
-        <HobbyStack.Screen name="Volleyball" component={Volleyball} />
-        <HobbyStack.Screen name="Writing" component={Writing} />
-    </HobbyStack.Navigator>
 );
 
 const App = () => (
