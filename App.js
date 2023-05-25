@@ -26,6 +26,7 @@ export const HobbiesNav = () => (
     </HobbyStack.Navigator>
 );
 
+// the first section defines the icons for the tab bar
 const RootNav = () => (
     <HomeTabs.Navigator
         screenOptions={ ({ route }) => ({
