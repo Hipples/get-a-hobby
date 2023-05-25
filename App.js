@@ -15,7 +15,8 @@ const HomeTabs = createBottomTabNavigator();
 const HobbyStack = createNativeStackNavigator();
 
 export const HobbiesNav = () => (
-    <HobbyStack.Navigator initialRouteName='Hobbies' >
+    <HobbyStack.Navigator initialRouteName='Hobbies' 
+        screenOptions={{ headerShown: false }}>
         {/* list of hobbies */}
         <HobbyStack.Screen name="Hobbies" component={Hobbies} />
         {/* individual hobby pages */}
@@ -40,9 +41,11 @@ const RootNav = () => (
                 return <FontAwesome5 name={iconName} size={24} color="black" />
             }}
         )} >
-        <HomeTabs.Screen name='Home' component={Home} />
+        <HomeTabs.Screen name='Home' component={Home}
+            options={{headerShown: false}} />
         <HomeTabs.Screen name='Explore Hobbies' component={HobbiesNav}
-            screenOptions={{ unmountOnBlur: true }} />
+            screenOptions={{ unmountOnBlur: true }}
+            options={{headerShown: false}} />
     </HomeTabs.Navigator>
 );
 

@@ -8,7 +8,6 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: colors.gray,
     },
     // just the logo
     logoContainer: {

@@ -1,21 +1,27 @@
 import { View, StyleSheet } from 'react-native';
 
-import Hobby from '../components/common/hobby';
+import Hobby from '../components/hobby/hobby';
+
+const coding_image = require('../assets/coding-button.jpg');
+const volleyball_image = require('../assets/volleyball-button.jpg');
+const writing_image = require('../assets/writing-button.jpg');
 
 const Hobbies = () => (
     <View style={styles.container}>
-        <Hobby hobby='Coding'>Coding</Hobby>
-        <Hobby hobby='Volleyball'>Volleyball</Hobby>
-        <Hobby hobby='Writing'>Writing</Hobby>
+        <Hobby hobby='Coding' image={coding_image}>Coding</Hobby>
+        <Hobby hobby='Volleyball' image={volleyball_image}>Volleyball</Hobby>
+        <Hobby hobby='Writing' image={writing_image}>Writing</Hobby>
     </View>
 );
+
+import { colors } from '../constants/theme';
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         alignItems: 'center',
-        backgroundColor: "#b1b5b9"
+        backgroundColor: colors.white
     }
 });
 
