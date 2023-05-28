@@ -1,29 +1,32 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { Dimensions } from 'react-native';
 
 import Welcome from './pages/welcome';
 import Home from './pages/home';
 import Hobbies from './pages/hobbies';
+import Favorites from './pages/favorites';
 import Coding from './pages/hobbies/coding';
 import Volleyball from './pages/hobbies/volleyball';
 import Writing from './pages/hobbies/writing';
 
 const WelcomeStack = createNativeStackNavigator();
 const HomeTabs = createBottomTabNavigator();
-const HobbyStack = createNativeStackNavigator();
+const HobbyPages = createMaterialTopTabNavigator();
 
-export const HobbiesNav = () => (
-    <HobbyStack.Navigator initialRouteName='Hobbies' 
-        screenOptions={{ headerShown: false }}>
-        {/* list of hobbies */}
-        <HobbyStack.Screen name="Hobbies" component={Hobbies} />
-        {/* individual hobby pages */}
-        <HobbyStack.Screen name="Coding" component={Coding} />
-        <HobbyStack.Screen name="Volleyball" component={Volleyball} />
-        <HobbyStack.Screen name="Writing" component={Writing} />
-    </HobbyStack.Navigator>
+const HobbiesNav = () => (
+    <HobbyPages.Navigator 
+        initialRouteName='Hobbies'
+        initialLayout={{ width: Dimensions.get('window').width }}
+        screenOptions={{ tabBarShowLabel: false }} >
+        <HobbyPages.Screen name="Hobbies" component={Hobbies} />
+        <HobbyPages.Screen name="Coding" component={Coding} />
+        <HobbyPages.Screen name="Volleyball" component={Volleyball} />
+        <HobbyPages.Screen name="Writing" component={Writing} />
+    </HobbyPages.Navigator>
 );
 
 // the first section defines the icons for the tab bar
@@ -40,13 +43,17 @@ const RootNav = () => (
                         ? 'book-open' : 'book';
                 }
                 return <FontAwesome5 name={iconName} size={24} color="black" />
-            }}
+            }, headerShown: false }
         )} >
-        <HomeTabs.Screen name='Home' component={Home}
-            options={{headerShown: false}} />
+        <HomeTabs.Screen name='Home' component={Home} />
         <HomeTabs.Screen name='Explore Hobbies' component={HobbiesNav}
-            screenOptions={{ unmountOnBlur: true }}
-            options={{headerShown: false}} />
+            listeners={({ navigation }) => ({
+                tabPress: (e) => {
+                    e.preventDefault();
+                    navigation.navigate("Explore Hobbies", {screen: "Hobbies"}
+                )}
+            })} />
+        <HomeTabs.Screen name="Favorites" component={Favorites} />
     </HomeTabs.Navigator>
 );
 

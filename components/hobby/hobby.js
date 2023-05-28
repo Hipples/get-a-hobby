@@ -1,10 +1,13 @@
-import { View, Pressable, Text, ImageBackground, StyleSheet } from 'react-native';
+import { Pressable, Text, ImageBackground, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+
+// import { Favorite } from '../favorites/favorite';
 
 const Hobby = (props) => {
     const navigation = useNavigation();
     return (
         <Pressable 
+            key={props.key}
             style={styles.buttonContainer}
             onPress={ () => navigation.navigate(props.hobby) }>
             <ImageBackground 

@@ -7,13 +7,22 @@ export const itemWidth = Dimensions.get('window').width
 export const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
-        backgroundColor: colors.gray
+        backgroundColor: colors.white
     },
     titleContainer: {
         borderBottomWidth: 1,
         borderColor: shadows.primary,
         margin: sizes.xsmall,
-        paddingTop: sizes.medium
+        paddingTop: sizes.medium,
+    },
+    favoriteContainer: {
+        alignItems: 'flex-end',
+        paddingRight: sizes.xsmall,
+        paddingTop: sizes.xsmall
+    },
+    heart: {
+        size: sizes.xxlarge,
+        color: highlights.tertiary
     },
     titleText: {
         textAlign: 'center',
@@ -28,7 +37,7 @@ export const styles = StyleSheet.create({
     },
     image: {
         height: 350,
-        width: 350,
+        width: itemWidth,
         resizeMode: 'cover'
     },
     ratingHeader: {
