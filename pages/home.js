@@ -2,9 +2,12 @@ import { View, StyleSheet } from 'react-native';
 
 import GetAHobbyButton from '../components/home/get-a-hobby-button';
 
+import Bored from '../components/home/bored';
+
 const Home = ({ navigation }) => (
     <View style={styles.container}>
-        <GetAHobbyButton navigation={navigation}/>        
+        <GetAHobbyButton navigation={navigation}/>  
+        <Bored />
     </View>
 );
 
@@ -19,4 +22,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Home;
+export default Home; 
