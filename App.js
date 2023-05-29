@@ -9,6 +9,7 @@ import Hobbies from './pages/hobbies';
 import Coding from './pages/hobbies/coding';
 import Volleyball from './pages/hobbies/volleyball';
 import Writing from './pages/hobbies/writing';
+import Legos from './pages/hobbies/legos';
 
 const WelcomeStack = createNativeStackNavigator();
 const HomeTabs = createBottomTabNavigator();
@@ -23,6 +24,7 @@ export const HobbiesNav = () => (
         <HobbyStack.Screen name="Coding" component={Coding} />
         <HobbyStack.Screen name="Volleyball" component={Volleyball} />
         <HobbyStack.Screen name="Writing" component={Writing} />
+        <HobbyStack.Screen name="Lego Building" component={Legos} />
     </HobbyStack.Navigator>
 );
 
