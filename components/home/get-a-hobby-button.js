@@ -15,7 +15,7 @@ const GetAHobbyButton = ( ) => {
                     styles.button,
                     pressed ? styles.pressed : styles.default ]}
                 onPress={() => navigation.navigate('Explore Hobbies', {screen: hobbies[hobbies.length * Math.random() | 0]})} >
-                <Text style={styles.buttonText}>Get A Hobby!</Text>
+                <Text style={styles.buttonText}>Display Activity</Text>
             </Pressable>
         </ButtonBorderGradient>
     );
