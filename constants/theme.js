@@ -12,7 +12,9 @@ export const colors = {
 export const shadows = {
     primary: "#1c4319",
     secondary: "#3f6e6a",
-    tertiary: "#1f1636"
+    tertiary: "#1f1636",
+
+    gray: "#82878c"
 }
 
 export const highlights = {

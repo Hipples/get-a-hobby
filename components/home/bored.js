@@ -1,44 +1,44 @@
 import { useState, useEffect } from 'react';
-import { Text, View, ActivityIndicator } from 'react-native';
+import { Text, View, Pressable, ActivityIndicator } from 'react-native';
+
+import { styles } from '../home/home-styles';
 
 const Bored = () => {
-    let [ loading, setLoading ] = useState(true);
-    let [ error, setError ] = useState();
-    let [ response, setResponse ] = useState();
+    const [ isLoading, setLoading ] = useState(true);
+    const [ data, setData ] = useState([]);
 
     const url = 'http://www.boredapi.com/api/activity/';
 
+    const getRandomActivity = async () => {
+        try {
+            const response = await fetch(url);
+            const json = await response.json();
+            setData(json);
+            console.log(data)
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
+    }    
+
     useEffect(() => {
-        fetch(url)
-            .then(response => response.json())
-            .then(
-                (result) => {
-                    setLoading(false);
-                    setResponse(result);
-                },
-                (error) => {
-                    setLoading(false);
-                    setError(error);
-                }
-            )
+        getRandomActivity()
     }, []);
-
-    const getContent = () => {
-        if (loading) {
-            return <ActivityIndicator size='large' />
-        }
-
-        if (error) {
-            return <Text>{error}</Text>
-        }
-
-        console.log(response)
-        return <Text>Activity: {response['activity']}</Text>
-    } 
 
     return (
         <View>
-            { getContent() }
+            { isLoading ? (
+                <ActivityIndicator size='large'/>
+            ) : (
+                <>
+                <Pressable 
+                    style={styles.activityContainer}
+                    onPress={() => getRandomActivity()}>
+                <Text style={styles.activity}>{data.activity}!</Text>
+                </Pressable>
+                </>
+            )}
         </View>
     );
 }

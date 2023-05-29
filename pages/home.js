@@ -1,25 +1,29 @@
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 
 import GetAHobbyButton from '../components/home/get-a-hobby-button';
 
+import Intro from '../components/home/intro';
 import Bored from '../components/home/bored';
+import FollowUp from '../components/home/follow-up';
 
-const Home = ({ navigation }) => (
-    <View style={styles.container}>
-        <GetAHobbyButton navigation={navigation}/>  
-        <Bored />
-    </View>
+import { styles } from '../components/home/home-styles';
+
+import { shadows, colors } from '../constants/theme';
+
+import { LinearGradient  } from 'expo-linear-gradient';
+
+export const HomeGradient = (props) => (
+    <LinearGradient 
+    colors={[ 'transparent', colors.gray ]}
+    style={styles.container}>{props.children}</LinearGradient>
 );
 
-import { colors } from '../constants/theme';
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: colors.gray
-    }
-});
+const Home = ({ }) => (
+    <HomeGradient>
+        <Intro />
+        <Bored />
+        <FollowUp />
+    </HomeGradient>
+);
 
 export default Home; 
