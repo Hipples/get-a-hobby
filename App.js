@@ -92,7 +92,7 @@ const RootNav = () => (
             ),
             headerTintColor: colors.white
         }}>
-        <Drawer.Screen name="Get A Hobby!" component={BottomTabNav} />
+        <Drawer.Screen name="GetAHobby!" component={BottomTabNav} />
         <Drawer.Screen name="About Us" component={AboutUs} />
     </Drawer.Navigator>
 );
