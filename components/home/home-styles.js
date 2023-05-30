@@ -5,8 +5,8 @@ import { colors, highlights, shadows, sizes } from '../../constants/theme';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: sizes.xxlarge*2,
         paddingHorizontal: sizes.small,
+        paddingTop: sizes.xxlarge
     },
     introContainer: {
         marginBottom: sizes.xxlarge

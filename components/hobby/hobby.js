@@ -1,4 +1,4 @@
-import { View, Pressable, Text, ImageBackground, StyleSheet } from 'react-native';
+import { Pressable, Text, ImageBackground, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 const Hobby = (props) => {

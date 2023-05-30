@@ -4,7 +4,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { View } from 'react-native';
 
 import Welcome from './pages/welcome';
 import Home from './pages/home';
@@ -15,18 +17,14 @@ import Writing from './pages/hobbies/writing';
 import Legos from './pages/hobbies/legos';
 import AboutUs from './pages/about-us';
 
+import { colors, highlights, shadows, sizes } from './constants/theme';
+
 const WelcomeStack = createNativeStackNavigator();
 const HomeTabs = createBottomTabNavigator();
 const HobbyStack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
-const RootNav = () => (
-    <Drawer.Navigator>
-        <Drawer.Screen name="Get A Hobby!" component={BottomTabNav} />
-        <Drawer.Screen name="About Us" component={AboutUs} />
-    </Drawer.Navigator>
-);
-
+// navigation for hobby pages
 const HobbiesNav = () => (
     <HobbyStack.Navigator initialRouteName='Hobbies' 
         screenOptions={{ headerShown: false }}>
@@ -45,6 +43,27 @@ const BottomTabNav = () => (
     <HomeTabs.Navigator
         initialRouteName='Home'
         screenOptions={ ({ route }) => ({
+            headerShown: false,
+            tabBarStyle: {
+                backgroundColor: shadows.tertiary,
+                height: sizes.large*3,
+                paddingTop: sizes.xsmall,
+                paddingBottom: sizes.xsmall
+            },
+            tabBarLabelStyle: { color: colors.white, fontSize: sizes.small },
+            tabBarBackground: () => (
+                <LinearGradient 
+                    colors={[ shadows.tertiary, highlights.tertiary ]}
+                    start={[1, 0]} end={[1, 1]}
+                    style={{ flex: 1 }}>
+                    <LinearGradient
+                        colors={[colors.quaternary, highlights.primary, colors.secondary, highlights.tertiary]}
+                        start={[0, 1]} end={[1, 1]}
+                        style={{ height: 3 }}
+                    />
+                </LinearGradient>
+              ),
+            
             tabBarIcon: ({ focused }) => {
                 let iconName;
                 if (route.name === 'Home') {
@@ -54,12 +73,28 @@ const BottomTabNav = () => (
                     iconName = focused
                         ? 'book-open' : 'book';
                 }
-                return <FontAwesome5 name={iconName} size={24} color="black" />
-            }}, { headerShown: false }
+                return <FontAwesome5 name={iconName} size={sizes.large} color={colors.white} />
+            }}
         )} >
         <HomeTabs.Screen name='Home' component={Home} />
         <HomeTabs.Screen name='Explore Hobbies' component={HobbiesNav} />
     </HomeTabs.Navigator>
+);
+
+// top drawer navigator
+const RootNav = () => (
+    <Drawer.Navigator
+        screenOptions={{
+            headerBackground: () => (
+                <LinearGradient 
+                    colors={[highlights.tertiary, shadows.tertiary]}
+                    style={{flex: 1}}/>
+            ),
+            headerTintColor: colors.white
+        }}>
+        <Drawer.Screen name="Get A Hobby!" component={BottomTabNav} />
+        <Drawer.Screen name="About Us" component={AboutUs} />
+    </Drawer.Navigator>
 );
 
 // navigation wrapper for entire app 
