@@ -5,7 +5,7 @@ import { styles } from './hobby-page-styles';
 const HobbyHealthAndSafety = ({ healthAndSafety }) => (
     <View style={styles.contentContainer}>
         <Text style={styles.contentHeader}>
-            Health & Safety:
+            Health & Safety
         </Text>
         <Text style={styles.contentText}>
             { healthAndSafety }

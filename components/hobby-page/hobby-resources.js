@@ -6,14 +6,14 @@ import { styles } from './hobby-page-styles';
 const HobbyResources = ({ hyperlinks }) => (
     <View style={styles.contentContainer}>
         <Text style={styles.contentHeader}>
-            External Resources:
+            External Resources
         </Text>
         {hyperlinks.map((link) => (
             <View key={link.index}>
                 <Hyperlink 
                     linkStyle={[styles.contentText, {fontStyle: 'italic'}]}
                     url={link.url}>
-                    {link.title}{'\n'}
+                    {link.title}
                 </Hyperlink>
             </View>
         ))}

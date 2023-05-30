@@ -20,7 +20,7 @@ import { colors, shadows, sizes } from '../../constants/theme';
 
 const styles = StyleSheet.create({
     buttonContainer: {
-        flexBasis: 130,
+        flexBasis: 150,
         justifyContent: 'center',
         alignSelf: 'stretch',
     },
@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'flex-start',
-        opacity: 1
     },
     hobbyText: {
         fontSize: sizes.xlarge*2,

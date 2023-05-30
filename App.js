@@ -34,7 +34,7 @@ const HobbiesNav = () => (
         <HobbyStack.Screen name="Coding" component={Coding} />
         <HobbyStack.Screen name="Volleyball" component={Volleyball} />
         <HobbyStack.Screen name="Writing" component={Writing} />
-        <HobbyStack.Screen name="Lego Building" component={Legos} />
+        <HobbyStack.Screen name="Legos" component={Legos} />
     </HobbyStack.Navigator>
 );
 

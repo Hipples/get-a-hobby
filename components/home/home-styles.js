@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { LinearGradient  } from 'expo-linear-gradient';
 
 import { colors, highlights, shadows, sizes } from '../../constants/theme';
 
@@ -6,7 +7,8 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal: sizes.small,
-        paddingTop: sizes.xxlarge
+        paddingTop: sizes.xxlarge,
+        backgroundColor: colors.white
     },
     introContainer: {
         marginBottom: sizes.xxlarge
@@ -18,9 +20,9 @@ export const styles = StyleSheet.create({
         fontWeight: '300',
         lineHeight: sizes.large*2,
         color: colors.black,
-        textShadowRadius: 2,
-        textShadowOffset: { width: 1, height: 1 },
-        textShadowColor: shadows.tertiary
+        // textShadowRadius: 1,
+        // textShadowOffset: { width: 1, height: 1 },
+        // textShadowColor: colors.black
     },
     activityContainer: {
         marginTop: sizes.xxlarge*2
@@ -40,5 +42,31 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: sizes.small,
         lineHeight: sizes.xxlarge
+    },
+    hobbiesContainer: {
+        flex: 1,
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        backgroundColor: colors.white, 
     }
 });
+
+export const HomeGradient = (props) => (
+    <LinearGradient 
+        colors={[ colors.white, colors.gray ]}
+        locations={[.35, .9]}
+        style={styles.container}>
+            {props.children}
+    </LinearGradient>
+);
+
+export const HobbiesGradient = (props) => (
+    <LinearGradient 
+        colors={[ colors.white, colors.gray ]}
+        locations={[.35, .9]}
+        style={styles.hobbiesContainer}>
+            {props.children}
+    </LinearGradient>
+);
+
+

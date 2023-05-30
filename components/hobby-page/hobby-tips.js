@@ -1,25 +1,27 @@
-import { SafeAreaView, ScrollView, View, Text } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
 
-import { styles, itemWidth } from './hobby-page-styles';
+import { styles, screenWidth, TipsGradient } from './hobby-page-styles';
 
 const HobbyTips = ({ tips }) => (
-    <SafeAreaView>
+    <View style={styles.contentContainer}>
+        <Text style={styles.contentHeader}>Tips!</Text>
         <ScrollView 
+            contentContainerStyle={{flexDirection: 'row', justifyContent: 'space-evenly'}}
             horizontal={true}
-            snapToInterval={itemWidth}
+            snapToInterval={screenWidth - 20}
             bounces={false}
             showsHorizontalScrollIndicator={false}>
         {tips.map((tip) => {
-            return (
-                <View key={tip.index} style={styles.tipContainer}>
-                    <Text style={styles.tipHeader}>Tip #{tip.index}</Text>
+            return (               
+                <TipsGradient key={tip.index}>
+                    <Text style={styles.tipHeader}>Tip #{tip.index}</Text>                 
                     <Text style={styles.tipTitle}>{tip.title}</Text>
                     <Text style={styles.tipText}>{tip.explanation}</Text>
-                </View>
+                </TipsGradient>
             );
         })}
         </ScrollView>
-    </SafeAreaView>
+    </View>
 );
 
 export default HobbyTips;

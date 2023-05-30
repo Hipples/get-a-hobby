@@ -1,8 +1,9 @@
 import { StyleSheet, Dimensions } from 'react-native';
+import { LinearGradient  } from 'expo-linear-gradient';
 
 import { sizes, colors, shadows, highlights } from '../../constants/theme';
 
-export const itemWidth = Dimensions.get('window').width
+export const screenWidth = Dimensions.get('window').width
 
 export const styles = StyleSheet.create({
     container: {
@@ -73,51 +74,34 @@ export const styles = StyleSheet.create({
         fontWeight: '300'
     },
     tipContainer: {
-        flex: 1,
-        justifyContent: 'space-around',
-        height: 600,
-        width: itemWidth-20,
-        backgroundColor: '#a8a',
-        borderWidth: 3,
-        marginHorizontal: 10,
-        marginBottom: 10,
-        padding: 10,
-        elevation: 5,
-        shadowColor: '#fff',
+        flexGrow: 1,
+        width: screenWidth-30,
+        justifyContent: 'space-evenly',
+        marginVertical: sizes.xsmall,
+        marginHorizontal: sizes.xxsmall,
+        padding: sizes.small,
+        borderWidth: 2,
+        backgroundColor: colors.white,
     },
     tipHeader: {
-        flex: 1,
-        textAlign: 'center',
-        fontSize: 50,
-        color: '#335',
-        fontWeight: 'bold',
-        textDecorationLine: 'underline',
+        fontSize: sizes.small,
+        color: colors.black,
+        textAlign: 'right',
     },
     tipTitle: {
-        flex: 1,
         textAlign: 'center',
-        fontSize: 35,
-        color: '#335',
+        fontSize: sizes.medium,
+        color: colors.black,
         fontStyle: 'italic',
-        padding: 10,
-        textShadowOffset: {width: 1, height: 1},
-        textShadowColor: '#333',
-        textShadowRadius: 2
+        marginVertical: sizes.small
     },
     tipText: {
-        flex: 1,
-        fontSize: 20,
-        paddingHorizontal: 5,
-        paddingVertical: 10,
-        color: '#335',
+        fontSize: sizes.small,
+        color: colors.black,
         textAlign: 'justify',
-        textShadowOffset: {width: -1, height: 1},
-        textShadowColor: '#337',
-        textShadowRadius: 1
     },
     resourcesContainer: {
         flexGrow: 1,
-        borderWidth: 2,
         marginHorizontal: sizes.xsmall,
         marginBottom: sizes.small
     },
@@ -126,3 +110,13 @@ export const styles = StyleSheet.create({
         fontSize: sizes.medium
     }
 });
+
+export const TipsGradient = (props) => (
+    <LinearGradient 
+        colors={[ highlights.quaternary, colors.quaternary ]}
+        start={{ x: .7, y: .7 }}
+        end={{ x: .9, y: 1 }}
+        style={styles.tipContainer}>
+            {props.children}
+    </LinearGradient>
+);
