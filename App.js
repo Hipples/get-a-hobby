@@ -6,7 +6,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { LinearGradient } from 'expo-linear-gradient';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { View } from 'react-native';
 
 import Welcome from './pages/welcome';
 import Home from './pages/home';
@@ -18,6 +17,7 @@ import Legos from './pages/hobbies/legos';
 import AboutUs from './pages/about-us';
 
 import { colors, highlights, shadows, sizes } from './constants/theme';
+import Profile from './profile';
 
 const WelcomeStack = createNativeStackNavigator();
 const HomeTabs = createBottomTabNavigator();
@@ -62,8 +62,7 @@ const BottomTabNav = () => (
                         style={{ height: 3 }}
                     />
                 </LinearGradient>
-              ),
-            
+            ),
             tabBarIcon: ({ focused }) => {
                 let iconName;
                 if (route.name === 'Home') {
@@ -93,6 +92,7 @@ const RootNav = () => (
             headerTintColor: colors.white
         }}>
         <Drawer.Screen name="GetAHobby!" component={BottomTabNav} />
+        <Drawer.Screen name="Profile" component={Profile} />
         <Drawer.Screen name="About Us" component={AboutUs} />
     </Drawer.Navigator>
 );
