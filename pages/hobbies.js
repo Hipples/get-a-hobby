@@ -1,5 +1,6 @@
+// TODO:: Instead of individual hobby pages, the content should be output
+// as a FlatList, or something of the like, to improve scalability
 import Hobby from '../components/hobby/hobby';
-
 import { HobbiesGradient } from '../components/home/home-styles';
 
 const coding_image = require('../assets/coding-button.jpg');
@@ -12,7 +13,7 @@ const Hobbies = () => (
         <Hobby hobby='Coding' image={coding_image}>Coding</Hobby>
         <Hobby hobby='Volleyball' image={volleyball_image}>Volleyball</Hobby>
         <Hobby hobby='Writing' image={writing_image}>Writing</Hobby>
-        <Hobby hobby='Legos' image={everything_is_awesome}>Legos</Hobby>
+        <Hobby hobby='Lego' image={everything_is_awesome}>Lego</Hobby>
     </HobbiesGradient>
 );
 

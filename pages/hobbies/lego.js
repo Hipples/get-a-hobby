@@ -4,9 +4,9 @@ import { description, requirements, healthAndSafety, tips, resources } from '../
 
 const image = require('../../assets/lego_button.png');
 
-const Legos = () => (
+const Lego = () => (
     <HobbyPage 
-        title="Lego Building"
+        title="Lego"
         image={image}
         rating={4}
         description={description}
@@ -16,4 +16,4 @@ const Legos = () => (
         resources={resources} />
 );
 
-export default Legos;
+export default Lego;
