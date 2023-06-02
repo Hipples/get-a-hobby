@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Dimensions, View, Button, Modal, Text, StyleSheet, TextInput, Pressable, Keyboard } from 'react-native';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
 const screenWidth = Dimensions.get('window').width
 
-const ModalScreen = () => {
+const EditName = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [text, setText] = useState("");
 
@@ -22,27 +22,38 @@ const ModalScreen = () => {
     try {
         await setItem(name);
         saveName(name); 
-    } catch (error) {
-        console.log(error);
-    }
+    } catch (error) { console.log(error) }
   }
+
+  const getName = async () => {
+    try {
+        const newName = await getItem()
+        saveName(newName)
+        console.log(savedName)
+    } catch (error) { console.log(error) }
+  }
+
+  useEffect(() => { getName() }, [])
+
   const handleChangeName = () =>{
     updateName(text);
     console.log(savedName)
     setText("");
+    toggleModal();
   }
+
   return (
     <View style={styles.container}>
-      <Button title="Open Modal" onPress={toggleModal} />
+        <Text>Hello {savedName}!{'\n\n'}Would you like to change your name?</Text>
+      <Button title="Yes, please" onPress={toggleModal} />
       <Modal
         visible={modalVisible}
-        animationType="slide"
+        animationType='slide'
         onRequestClose={toggleModal}
-        transparent={true}
-        style={{ justifyContent: 'center'}}>
-            <Pressable style={styles.container} onPress={() => Keyboard.dismiss()}>
+        transparent={true}>
+            <Pressable style={{flexGrow: 1, justifyContent: 'center', alignItems: 'center'}} onPress={() => {Keyboard.dismiss(); toggleModal();}}>
                 <View style={styles.modalContainer}>
-                    <Text style={styles.modalText}>What should we call you?</Text>
+                    <Text label="Name" style={styles.modalText}>What should we call you?</Text>
                     <TextInput value={text} onChangeText={(name) => setText(name)}
                         style={{flexBasis: 100, fontSize: 50, padding: 10, width: screenWidth-50,
                         backgroundColor: 'green'}} />
@@ -60,9 +71,9 @@ const ModalScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: 'gray',
-    justifyContent: 'center',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
   },
   modalContainer: {
@@ -70,7 +81,7 @@ const styles = StyleSheet.create({
     width: screenWidth-20,
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: 'black',
+    backgroundColor: 'purple',
     padding: 20
   },
   modalText: {
@@ -80,4 +91,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ModalScreen;
+export default EditName;
