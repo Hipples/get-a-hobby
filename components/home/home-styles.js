@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { LinearGradient  } from 'expo-linear-gradient';
 
-import { colors, highlights, shadows, sizes } from '../../constants/theme';
+import { colors, sizes } from '../../constants/theme';
 
 export const styles = StyleSheet.create({
     container: {
@@ -20,9 +20,6 @@ export const styles = StyleSheet.create({
         fontWeight: '300',
         lineHeight: sizes.large*2,
         color: colors.black,
-        // textShadowRadius: 1,
-        // textShadowOffset: { width: 1, height: 1 },
-        // textShadowColor: colors.black
     },
     activityContainer: {
         marginTop: sizes.xxlarge*2
