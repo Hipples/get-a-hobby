@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Dimensions, View, Button, Modal, Text, StyleSheet, TextInput, Pressable, Keyboard } from 'react-native';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
 const screenWidth = Dimensions.get('window').width
 
@@ -11,10 +12,28 @@ const ModalScreen = () => {
     setModalVisible(!modalVisible);
   };
 
+  const [savedName, saveName] = useState("");  
+  const { getItem, setItem } = useAsyncStorage('@name');
+
+  const updateName = async (name) => {
+    if ( name.length === 0 ) {
+        alert("Please enter at least one character!")
+    }
+    try {
+        await setItem(name);
+        saveName(name); 
+    } catch (error) {
+        console.log(error);
+    }
+  }
+  const handleChangeName = () =>{
+    updateName(text);
+    console.log(savedName)
+    setText("");
+  }
   return (
     <View style={styles.container}>
       <Button title="Open Modal" onPress={toggleModal} />
-
       <Modal
         visible={modalVisible}
         animationType="slide"
@@ -29,7 +48,7 @@ const ModalScreen = () => {
                         backgroundColor: 'green'}} />
                     <View style={{flexDirection: 'row', width: screenWidth-50,
                         backgroundColor: 'gray', justifyContent: 'space-between'}}>
-                    <Button title="Change name" style={{}}/>
+                    <Button title="Change name" onPress={handleChangeName}/>
                     <Button title="Nevermind" onPress={toggleModal} />
                     </View>
                 </View>
