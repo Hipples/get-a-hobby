@@ -1,6 +1,6 @@
-import DifficultyRating from './difficulty-rating';
+import DifficultyRating from './components/difficulty-rating';
 
-import { styles } from '../hobby-page-styles';
+import { styles } from './hobby-page-styles';
 
 const HobbyDifficulty = ({ rating }) => (
     <DifficultyRating 

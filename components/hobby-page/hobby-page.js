@@ -2,7 +2,7 @@ import { ScrollView } from 'react-native';
 
 import HobbyTitle from '../../components/hobby-page/hobby-title';
 import HobbyImage from '../../components/hobby-page/hobby-image';
-import HobbyDifficulty from '../../components/hobby-page/hobby-difficulty/hobby-difficulty';
+import HobbyDifficulty from '../../components/hobby-page/hobby-difficulty';
 import HobbyDescription from '../../components/hobby-page/hobby-description';
 import HobbyRequirements from '../../components/hobby-page/hobby-requirements';
 import HobbyHealthAndSafety from './hobby-health-and-safety';
