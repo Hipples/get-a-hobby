@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
@@ -12,15 +12,18 @@ import CreateUser from "../components/settings/create-user";
 const WelcomeStack = createNativeStackNavigator();
 
 const InitialNav = () => {
+    const [ loading, setLoading ] = useState(true);
     const { user, setUser } = useUserContext();
     const { getItem } = useAsyncStorage('@user');
 
     const checkForUser = async () => {
         try {        
             const name = await getItem();
-            if (name !== null);
-            setUser(user)
-            console.log(`User from InitialNav: ${user}`)
+            if (name !== null) {
+                setUser(user)
+                console.log(`Initial user: ${user}`);
+                setLoading(false)
+            }
         } catch (error) { console.log(error) }
     }
 

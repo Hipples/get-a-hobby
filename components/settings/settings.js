@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Dimensions, View, Button, Modal, Text, StyleSheet, TextInput, Pressable, Keyboard } from 'react-native';
+import DeleteUser from './delete-user';
 
 const screenWidth = Dimensions.get('window').width
 
@@ -13,6 +14,7 @@ const Settings = () => {
 
   return (
     <View style={styles.container}>
+      <DeleteUser />
       <Button title="Open Modal" onPress={toggleModal} />
 
       <Modal
