@@ -1,6 +1,6 @@
 // TODO:: Instead of individual hobby pages, the content should be output
 // as a FlatList, or something of the like, to improve scalability
-import Hobby from '../components/hobby/hobby';
+import Hobby from '../components/hobbies/hobby';
 import { HobbiesGradient } from '../components/home/home-styles';
 
 const coding_image = require('../assets/coding-button.jpg');

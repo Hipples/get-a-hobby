@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Dimensions, View, Button, Modal, Text, StyleSheet, TextInput, Pressable, Keyboard } from 'react-native';
-import DeleteUser from './delete-user';
+
+import DeleteUser from '../components/settings/delete-user';
 
 const screenWidth = Dimensions.get('window').width
 

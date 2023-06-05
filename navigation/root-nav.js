@@ -1,7 +1,7 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import AboutUs from '../pages/about-us';
-import Settings from '../components/settings/settings';
+import Settings from '../pages/settings';
 
 import HomeTabsNav from "./home-tabs-nav";
 import HeaderBackground from "./styles/header-background";
