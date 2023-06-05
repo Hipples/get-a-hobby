@@ -42,12 +42,6 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: sizes.small,
         lineHeight: sizes.xxlarge
-    },
-    hobbiesContainer: {
-        flex: 1,
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
-        backgroundColor: colors.white, 
     }
 });
 
@@ -59,14 +53,3 @@ export const HomeGradient = (props) => (
             {props.children}
     </LinearGradient>
 );
-
-export const HobbiesGradient = (props) => (
-    <LinearGradient 
-        colors={[ colors.white, colors.gray ]}
-        locations={[.35, .9]}
-        style={styles.hobbiesContainer}>
-            {props.children}
-    </LinearGradient>
-);
-
-
