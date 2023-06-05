@@ -1,15 +1,15 @@
 import { ScrollView } from 'react-native';
 
-import HobbyTitle from '../../components/hobby-page/hobby-title';
-import HobbyImage from '../../components/hobby-page/hobby-image';
-import HobbyDifficulty from '../../components/hobby-page/hobby-difficulty';
-import HobbyDescription from '../../components/hobby-page/hobby-description';
-import HobbyRequirements from '../../components/hobby-page/hobby-requirements';
+import HobbyTitle from './hobby-title';
+import HobbyImage from './hobby-image';
+import HobbyDifficulty from './hobby-difficulty';
+import HobbyDescription from './hobby-description';
+import HobbyRequirements from './hobby-requirements';
 import HobbyHealthAndSafety from './hobby-health-and-safety';
-import HobbyTips from '../../components/hobby-page/hobby-tips';
-import HobbyResources from '../../components/hobby-page/hobby-resources';
+import HobbyTips from './hobby-tips';
+import HobbyResources from './hobby-resources';
 
-import { styles } from '../hobby-page/hobby-page-styles';
+import { styles } from './hobby-page-styles';
 
 const HobbyPage = ( props ) => (
     <ScrollView 
