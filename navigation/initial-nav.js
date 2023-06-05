@@ -20,7 +20,7 @@ const InitialNav = () => {
         try {        
             const name = await getItem();
             if (name !== null) {
-                setUser(user)
+                setUser(name)
                 console.log(`Initial user: ${user}`);
                 setLoading(false)
             }
