@@ -1,10 +1,10 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import AboutUs from '../pages/about-us';
-import EditName from '../components/username/edit-name';
+import Settings from '../components/settings/settings';
 
-import BottomTabNav from "./bottom-tab-nav";
-import HeaderBackground from "../components/navigation/header-background";
+import HomeTabsNav from "./home-tabs-nav";
+import HeaderBackground from "./header-background";
 import { colors } from "../constants/theme";
 
 const Drawer = createDrawerNavigator();
@@ -18,9 +18,9 @@ const RootNav = () => (
             ),
             headerTintColor: colors.white
         }}>
-        <Drawer.Screen name="GetAHobby!" component={BottomTabNav} />
+        <Drawer.Screen name="GetAHobby!" component={HomeTabsNav} />
+        <Drawer.Screen name="Settings" component={Settings} />
         <Drawer.Screen name="About Us" component={AboutUs} />
-        <Drawer.Screen name="Edit Name" component={EditName} />
     </Drawer.Navigator>
 );
 

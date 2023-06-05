@@ -3,7 +3,7 @@ import { Dimensions, View, Button, Modal, Text, StyleSheet, TextInput, Pressable
 
 const screenWidth = Dimensions.get('window').width
 
-const ModalScreen = () => {
+const Settings = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [text, setText] = useState("");
 
@@ -61,4 +61,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ModalScreen;
+export default Settings;

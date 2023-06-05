@@ -1,5 +1,5 @@
 import { LinearGradient } from "expo-linear-gradient";
-import { highlights, shadows } from "../../constants/theme";
+import { highlights, shadows } from "../constants/theme";
 
 const HeaderBackground = () => (
     <LinearGradient 

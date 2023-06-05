@@ -4,14 +4,14 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 import Home from '../pages/home';
 
-import HobbiesNav from '../navigation/hobbies-nav';
+import HobbiesNav from './hobbies-nav';
 
 import { colors, highlights, shadows, sizes } from '../constants/theme';
 
 const HomeTabs = createBottomTabNavigator();
 
 // there is a lot of styling going on here. . .
-const BottomTabNav = () => (
+const HomeTabsNav = () => (
     <HomeTabs.Navigator
         initialRouteName='Home'
         screenOptions={ ({ route }) => ({
@@ -53,4 +53,4 @@ const BottomTabNav = () => (
     </HomeTabs.Navigator>
 );
 
-export default BottomTabNav;
+export default HomeTabsNav;
