@@ -5,9 +5,10 @@ import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 
 import { useUserContext } from "../contexts/user-context";
 
+import SplashScreen from "../pages/splashscreen";
 import Welcome from '../pages/welcome';
-import RootNav from './root-nav';
 import CreateUser from "../components/settings/create-user";
+import RootNav from './root-nav';
 
 const WelcomeStack = createNativeStackNavigator();
 
@@ -28,6 +29,8 @@ const InitialNav = () => {
     }
 
     useEffect(() => { checkForUser() }, []);
+
+    if ( loading ) { return(<SplashScreen />) }
 
     return (
         <NavigationContainer>
