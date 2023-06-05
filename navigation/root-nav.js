@@ -4,7 +4,7 @@ import AboutUs from '../pages/about-us';
 import Settings from '../components/settings/settings';
 
 import HomeTabsNav from "./home-tabs-nav";
-import HeaderBackground from "./header-background";
+import HeaderBackground from "./styles/header-background";
 import { colors } from "../constants/theme";
 
 const Drawer = createDrawerNavigator();
