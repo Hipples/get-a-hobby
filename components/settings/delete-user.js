@@ -1,6 +1,8 @@
-import { useAsyncStorage } from "@react-native-async-storage/async-storage";
-import { useUserContext } from "../../contexts/user-context"
 import { Pressable, View, Text } from "react-native";
+import { useAsyncStorage } from "@react-native-async-storage/async-storage";
+
+import { useUserContext } from "../../contexts/user-context"
+import { styles } from './settings-styles';
 
 const DeleteUser = () => {
     const { setUser } = useUserContext();
@@ -14,11 +16,11 @@ const DeleteUser = () => {
     }
 
     return (
-        <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
+        <View style={styles.deleteUserButtonContainer}>
         <Pressable 
             onPress={() => deleteUser()}
-            style={{borderWidth: 2, borderRadius: 20, height: 100, width: 200}}>
-            <Text style={{fontSize: 20}}>Delete User</Text>
+            style={styles.deleteUserButton}>
+            <Text style={styles.deleteUserButtonLabel}>Delete User</Text>
         </Pressable>
         </View>
     );
