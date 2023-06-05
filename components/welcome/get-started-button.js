@@ -9,7 +9,7 @@ const GetStartedButton = ({ navigation }) => (
             style={({ pressed }) => [
                 styles.button,
                 pressed ? styles.pressed : styles.default ]}
-            onPress={() => navigation.navigate('Root')} >
+            onPress={() => navigation.navigate('New User')} >
             <Text style={styles.buttonText}>Get Started!</Text>
         </Pressable>
     </ButtonBorderGradient>
