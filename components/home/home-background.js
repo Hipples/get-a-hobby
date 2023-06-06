@@ -1,16 +1,15 @@
-import { useState } from "react";
 import { Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-import { useBoredContext } from "../../contexts/bored-context";
-
+import { useBoredContext, useLoadingContext } from "../../contexts/bored-context";
 
 import { styles } from './home-styles';
 import { colors } from "../../constants/theme";
+import { useEffect } from "react";
 
 const HomeBackground = ({ children }) => {
-    const [ data, setData ] = useState();
     const { setActivity } = useBoredContext();
+    const { setLoading } = useLoadingContext();
 
     const url = 'http://www.boredapi.com/api/activity/';
 
@@ -18,13 +17,13 @@ const HomeBackground = ({ children }) => {
         try {
             const response = await fetch(url);
             const json = await response.json();
-            setData(json.activity)
+            setActivity(json.activity)
         } catch (error) {
             console.error(error);
-        } finally {
-            setActivity(data);
-        }
-    }    
+        } finally { setLoading(false) }
+    }
+    
+    useEffect(() => { setRandomActivity() }, [])
 
     return(
         <LinearGradient

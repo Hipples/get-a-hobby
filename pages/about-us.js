@@ -2,7 +2,7 @@ import { View, Text } from 'react-native';
 
 const AboutUs = () => (
     <View>
-        <Text>
+        <Text style={{padding: 10}}>
             Welcome to GetAHobby!
             {'\n\n'}
             We are a team of MSCS students from City University of Seattle. This app is a term project for CS 624: Full-Stack Development (Mobile Apps) in Spring of 2023. GetAHobby has been designed to demonstrate the development process of a React Native cross-platform mobile application. 
@@ -12,7 +12,9 @@ const AboutUs = () => (
             - StyleSheet Designs{'\n'}
             - React Navigation{'\n'}
             - React Hooks{'\n'}
-            - Networking{'\n'}
+            - React Context{'\n'}
+            - Fetch API{'\n'}
+            - Async Storage{'\n'}
         </Text>
     </View>
 );
