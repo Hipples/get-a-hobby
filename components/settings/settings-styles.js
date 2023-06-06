@@ -1,20 +1,35 @@
 import { Dimensions, StyleSheet } from "react-native";
 
 import { colors, highlights, shadows, sizes } from "../../constants/theme";
+import { LinearGradient } from "expo-linear-gradient";
 
 const screenWidth = Dimensions.get('window').width
 
 export const styles = StyleSheet.create({
+  // main background for Settings page
   container: {
-    flex: 1,
+    flexGrow: 1,
+    padding: sizes.xxsmall,
   },
-  editUser: {
-    flexBasis: 100, 
-    fontSize: 50, 
-    padding: 10, 
-    width: screenWidth-50,
-    backgroundColor: 'green'
+  // styles for user greeting & prompt on Settings page
+  greetingContainer: {},
+  greetingText: {
+    fontSize: sizes.xxlarge,
+    fontWeight: '300',
+    marginBottom: sizes.small
   },
+  greetingPrompt: {
+    fontSize: sizes.large,
+    fontWeight: '300',
+    marginBottom: sizes.small
+  },
+  settingsButton: {
+
+  },
+  settingsButtonText: {
+
+  },
+  // styles for creating a new user (welcome page pop-up)
   createUser: {
     flex: 1, 
     justifyContent: 'center', 
@@ -79,25 +94,7 @@ export const styles = StyleSheet.create({
     textShadowRadius: 1,
     textShadowOffset: { height: 1, width: -1 }
   },
-  deleteUserButtonContainer: {
-    flex:1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  deleteUserButton: {
-      borderWidth: 2,
-      borderRadius: 20,
-      height: 100,
-      width: 200
-  },
-  deleteUserButtonLabel: {
-      fontSize: 20
-  },
-  editUserContainer: {
-    flex: 1,
-    borderWidth: 3
-  },
+  // styles for Change Username pop-up
   modalContainer: {
     flexBasis: 500,
     width: screenWidth-20,
@@ -112,3 +109,10 @@ export const styles = StyleSheet.create({
     color: 'white'
   },
 });
+
+export const SettingsBackground = ({ children }) => (
+  <LinearGradient
+  colors={[ colors.white, colors.gray ]}
+  locations={[.35, .9]}
+  style={styles.container}>{children}</LinearGradient>
+);

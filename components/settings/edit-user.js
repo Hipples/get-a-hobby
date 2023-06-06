@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { View } from 'react-native';
 
-import GreetUser from './greet-user';
 import EditName from './edit-name';
 import Button from '../common/button';
 
@@ -15,14 +13,13 @@ const EditUser = () => {
     };
   
     return (
-        <View style={styles.editUserContainer}>
-            <GreetUser />
-            <Button
-                label='Change my username'
-                buttonStyle={{flex: 1, backgroundColor: 'black'}} labelStyle={styles.buttonText}
-                onPress={toggleModal} />
-            <EditName modalVisible={modalVisible} toggleModal={toggleModal} />
-        </View>
+        <>
+        <Button
+            label='Change Username'
+            buttonStyle={{backgroundColor: 'black'}} labelStyle={styles.buttonText}
+            onPress={toggleModal} />
+        <EditName modalVisible={modalVisible} toggleModal={toggleModal} />
+        </>
     );
   };
 

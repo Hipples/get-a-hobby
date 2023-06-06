@@ -36,7 +36,7 @@ const EditName = ({ modalVisible, toggleModal }) => {
                 <View style={styles.modalContainer}>
                     <Text style={styles.modalText}>What should we call you?</Text>
                     <TextInput 
-                        style={styles.editUser}
+                        style={styles.userInput}
                         value={value} 
                         onChangeText={(newName) => setValue(newName)}
                         placeholder="Enter name" />

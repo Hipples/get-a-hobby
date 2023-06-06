@@ -1,15 +1,15 @@
-import { View } from 'react-native'; 
-
 import DeleteUser from '../components/settings/delete-user';
 import EditUser from '../components/settings/edit-user';
+import GreetUser from '../components/settings/greet-user';
 
-import { styles } from '../components/settings/settings-styles';
+import { SettingsBackground, styles } from '../components/settings/settings-styles';
 
 const Settings = () => (
-  <View style={styles.container}>
+  <SettingsBackground>
+    <GreetUser />
     <EditUser />
     <DeleteUser />
-  </View>
-)
+  </SettingsBackground>
+);
 
-export default Settings;
+export default Settings; 

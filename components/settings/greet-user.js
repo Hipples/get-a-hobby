@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
 import { useUserContext } from '../../contexts/user-context';
+import { styles } from './settings-styles';
 
 const GreetUser = () => {
     const [ currentUser, setCurrentUser ] = useState(user);
@@ -20,9 +21,9 @@ const GreetUser = () => {
     useEffect(() => { getStoredUser() }, []);
     console.log(`Hello from settings, ${currentUser}!`);
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
-            <Text style={{fontsize: 30}}>Hey { user }!</Text>
-            <Text style={{fontsize: 30}}>What would you like to do?</Text>
+        <View style={styles.greetingContainer}>
+            <Text style={styles.greetingText}>Hey { user }!</Text>
+            <Text style={styles.greetingPrompt}>What would you like to do?</Text>
         </View>
     )
 }
