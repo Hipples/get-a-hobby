@@ -4,22 +4,19 @@ import { colors, sizes } from '../../constants/theme';
 
 export const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        flexGrow: 1,
         paddingHorizontal: sizes.small,
-        paddingTop: sizes.xxlarge,
-        backgroundColor: colors.white
     },
-    usernameContainer: {
-        alignSelf: 'center',
-        padding: sizes.medium,
-        marginBottom: sizes.small
+    apiContainer: {
+        flexGrow: 1,
+        justifyContent: 'space-evenly',
+        alignItems: 'center'
     },
+    usernameContainer: {},
     username: {
         fontSize: sizes.xxlarge
     },
-    introContainer: {
-        marginBottom: sizes.xxlarge
-    },
+    introContainer: {},
     introText: {
         fontSize: sizes.large,
         fontStyle: 'italic',
@@ -29,18 +26,14 @@ export const styles = StyleSheet.create({
         color: colors.black
     },
     activityContainer: {
-        marginTop: sizes.xxlarge    
+        marginBottom: sizes.large*4
     },
     activity: {
         fontSize: sizes.large,
         lineHeight: sizes.xxlarge,
         textAlign: 'center'
     }, 
-    followUpContainer: {
-        flexGrow: 1,
-        justifyContent: 'flex-end',
-        marginBottom: sizes.xxlarge
-    },
+    followUpContainer: {},
     followUpText: {
         textAlign: 'center',
         fontSize: sizes.small,

@@ -32,7 +32,7 @@ const HomeBackground = ({ children }) => {
             style={styles.container}>
             <Pressable 
                 onPress={ () => setRandomActivity() } 
-                style={{flex: 1}}>
+                style={styles.apiContainer}>
                 { children }        
             </Pressable>
         </LinearGradient>
