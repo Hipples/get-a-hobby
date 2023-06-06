@@ -42,7 +42,7 @@ const CreateUser = ({ navigation }) => {
           <TextInput 
             value={value} 
             onChangeText={(newValue) => setValue(newValue)}
-            style={styles.userInput}
+            style={styles.loginInput}
             autoFocus={true}
             maxLength={20} />
           

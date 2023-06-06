@@ -15,8 +15,8 @@ const EditUser = () => {
     return (
         <>
         <Button
-            label='Change Username'
-            buttonStyle={{backgroundColor: 'black'}} labelStyle={styles.buttonText}
+            label='Edit Name'
+            buttonStyle={[styles.settingsButton, styles.editName]} labelStyle={styles.settingsButtonText}
             onPress={toggleModal} />
         <EditName modalVisible={modalVisible} toggleModal={toggleModal} />
         </>

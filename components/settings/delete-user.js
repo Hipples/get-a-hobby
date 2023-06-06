@@ -19,7 +19,7 @@ const DeleteUser = () => {
     return (
         <Button
             label='Delete User'
-            buttonStyle={{backgroundColor: 'black'}} labelStyle={styles.buttonText}
+            buttonStyle={[styles.settingsButton, styles.deleteUser]} labelStyle={styles.settingsButtonText}
             onPress={() => deleteUser()} />
     );
 }

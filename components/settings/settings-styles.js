@@ -9,26 +9,74 @@ export const styles = StyleSheet.create({
   // main background for Settings page
   container: {
     flexGrow: 1,
-    padding: sizes.xxsmall,
+    paddingTop: sizes.xxlarge,
+    paddingHorizontal: sizes.xxsmall,
+    justifyContent: 'flex-start'
   },
   // styles for user greeting & prompt on Settings page
-  greetingContainer: {},
+  greetingContainer: {
+    marginBottom: sizes.xxlarge
+  },
   greetingText: {
     fontSize: sizes.xxlarge,
     fontWeight: '300',
-    marginBottom: sizes.small
+    marginBottom: sizes.xxlarge
   },
   greetingPrompt: {
-    fontSize: sizes.large,
+    fontSize: sizes.xlarge,
     fontWeight: '300',
-    marginBottom: sizes.small
   },
   settingsButton: {
-
+    borderWidth: 1,
+    elevation: 5,
+    marginVertical: sizes.small,
+    padding: sizes.medium,
   },
   settingsButtonText: {
-
+    fontSize: sizes.large
   },
+  editName: {
+    backgroundColor: colors.secondary
+  },
+  deleteUser: {
+    backgroundColor: shadows.quaternary
+  },
+  goBackHome: {
+    backgroundColor: colors.tertiary
+  },
+  // styles for Edit Name pop-up
+  editNameContainer: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  editNamePopup: {
+    flexBasis: 250,
+    width: screenWidth-20,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: sizes.small,
+    borderWidth: 1,
+    borderRadius: sizes.large
+  },
+  editNamePrompt: {
+    fontSize: sizes.large
+  },
+  editNameInput: {
+    flexBasis: sizes.large*3,
+    width: screenWidth-50,
+    borderBottomWidth: 1,
+    borderTopWidth: 1,
+    borderRadius: sizes.small,
+    padding: sizes.medium,
+    fontSize: sizes.medium,
+    fontWeight: '300'
+  },
+
+
+
+
+
   // styles for creating a new user (welcome page pop-up)
   createUser: {
     flex: 1, 
@@ -53,7 +101,7 @@ export const styles = StyleSheet.create({
     fontSize: sizes.large,
     color: colors.black,
   },
-  userInput: {
+  loginInput: {
     flexBasis: 75,
     width: screenWidth-50,
     padding: sizes.small,
@@ -63,6 +111,13 @@ export const styles = StyleSheet.create({
     fontSize: sizes.large,
     backgroundColor: colors.white,
   },
+  continue: {
+    backgroundColor: colors.primary
+  },
+  cancel: {
+    backgroundColor: shadows.quaternary
+  },
+  // common styles
   buttonsContainer: {
     flexDirection: 'row', 
     columnGap: 10,
@@ -80,12 +135,6 @@ export const styles = StyleSheet.create({
     elevation: 2,
     shadowColor: shadows.black
   },
-  continue: {
-    backgroundColor: colors.primary
-  },
-  cancel: {
-    backgroundColor: shadows.quaternary
-  },
   buttonText: {
     color: colors.white,
     fontSize: sizes.medium,
@@ -94,20 +143,9 @@ export const styles = StyleSheet.create({
     textShadowRadius: 1,
     textShadowOffset: { height: 1, width: -1 }
   },
-  // styles for Change Username pop-up
-  modalContainer: {
-    flexBasis: 500,
-    width: screenWidth-20,
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    backgroundColor: 'black',
-    padding: 20
-  },
-  modalText: {
-    fontSize: 20,
-    marginBottom: 20,
-    color: 'white'
-  },
+
+
+
 });
 
 export const SettingsBackground = ({ children }) => (
@@ -115,4 +153,11 @@ export const SettingsBackground = ({ children }) => (
   colors={[ colors.white, colors.gray ]}
   locations={[.35, .9]}
   style={styles.container}>{children}</LinearGradient>
+);
+
+export const EditNameBackground = ({ children }) => (
+  <LinearGradient
+  colors={[ colors.gray, colors.white ]}
+  locations={[.1, .65]}
+  style={styles.editNamePopup}>{children}</LinearGradient>
 );
