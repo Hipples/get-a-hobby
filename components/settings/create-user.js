@@ -30,7 +30,7 @@ const CreateUser = ({ navigation }) => {
     }
  
     return (
-      <View style={styles.loginPage}>
+      <View style={styles.createUser}>
         <View style={styles.loginContainer}>
           
           <Text 
