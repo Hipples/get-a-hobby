@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { LinearGradient  } from 'expo-linear-gradient';
 
 import { colors, sizes } from '../../constants/theme';
 
@@ -36,7 +35,6 @@ export const styles = StyleSheet.create({
     activity: {
         fontSize: sizes.large,
         lineHeight: sizes.xxlarge,
-        // fontWeight: '300',
         textAlign: 'center'
     }, 
     followUpContainer: {
@@ -50,12 +48,3 @@ export const styles = StyleSheet.create({
         lineHeight: sizes.xxlarge
     }
 });
-
-export const HomeGradient = (props) => (
-    <LinearGradient 
-        colors={[ colors.white, colors.gray ]}
-        locations={[.35, .9]}
-        style={styles.container}>
-            {props.children}
-    </LinearGradient>
-);
