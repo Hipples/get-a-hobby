@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
         marginBottom: sizes.xxlarge
     },
     introText: {
-        fontSize: sizes.xlarge,
+        fontSize: sizes.large,
         fontStyle: 'italic',
         textAlign: 'center',
         fontWeight: '300',
@@ -29,8 +29,7 @@ export const styles = StyleSheet.create({
         color: colors.black
     },
     activityContainer: {
-        borderWidth: 1,
-        marginTop: sizes.xxlarge*2
+        marginTop: sizes.xxlarge    
     },
     activity: {
         fontSize: sizes.large,

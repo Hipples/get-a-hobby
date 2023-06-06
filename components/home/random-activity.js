@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { Text, View, Pressable, ActivityIndicator } from 'react-native';
+import { Text, View, ActivityIndicator } from 'react-native';
 
 import { useBoredContext, useLoadingContext } from '../../contexts/bored-context';
+
 import { styles } from './home-styles';
 
 const RandomActivity = () => {
@@ -9,11 +9,19 @@ const RandomActivity = () => {
     const { loading } = useLoadingContext();
 
     return (
-        <View>
-        { loading ?
-            ( <ActivityIndicator size='large' /> ) : ( <Text style={styles.activity}>{activity}!</Text> )
+        <>
+        { loading 
+            ? ( 
+                <View style={styles.activityContainer}>
+                    <ActivityIndicator size='large' />
+                </View> 
+            ) : ( 
+                <View style={styles.activityContainer}>
+                    <Text style={styles.activity}>{activity}!</Text>
+                </View>
+            )
         }
-        </View>
+        </>
     );
 }
 
