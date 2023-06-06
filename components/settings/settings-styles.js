@@ -10,39 +10,55 @@ export const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     paddingTop: sizes.xxlarge,
-    paddingHorizontal: sizes.xxsmall,
-    justifyContent: 'flex-start'
+    justifyContent: 'space-between'
   },
   // styles for user greeting & prompt on Settings page
   greetingContainer: {
-    marginBottom: sizes.xxlarge
+    marginBottom: sizes.xxlarge,
+    paddingHorizontal: sizes.small
   },
   greetingText: {
+    color: colors.black,
     fontSize: sizes.xxlarge,
     fontWeight: '300',
     marginBottom: sizes.xxlarge
   },
   greetingPrompt: {
+    color: colors.black,
     fontSize: sizes.xlarge,
     fontWeight: '300',
   },
-  settingsButton: {
-    borderWidth: 1,
-    elevation: 5,
+  // common styles for the options displayed in Settings
+  optionsContainer: {
+    flex: 1,
+    justifyContent: 'space-evenly'
+  },
+  option: {
+    borderWidth: 2,
+    borderRadius: sizes.xxlarge,
+    borderColor: colors.black,
+    elevation: 3,
     marginVertical: sizes.small,
+    marginHorizontal: sizes.small,
     padding: sizes.medium,
   },
-  settingsButtonText: {
-    fontSize: sizes.large
+  optionText: {
+    color: colors.black,
+    fontSize: sizes.large,
+    fontWeight: 'bold',
+    textShadowColor: shadows.gray,
+    textShadowRadius: 1,
+    textShadowOffset: { height: 1, width: 2 }
   },
+  // specific colors for the options in Settings
   editName: {
     backgroundColor: colors.secondary
   },
   deleteUser: {
     backgroundColor: shadows.quaternary
   },
-  goBackHome: {
-    backgroundColor: colors.tertiary
+  goHome: {
+    backgroundColor: highlights.tertiary
   },
   // styles for Edit Name pop-up
   editNameContainer: {
@@ -57,10 +73,12 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     padding: sizes.small,
     borderWidth: 1,
-    borderRadius: sizes.large
+    borderRadius: sizes.large,
+    elevation: 5
   },
   editNamePrompt: {
-    fontSize: sizes.large
+    fontSize: sizes.large,
+    color: colors.black
   },
   editNameInput: {
     flexBasis: sizes.large*3,
@@ -70,13 +88,9 @@ export const styles = StyleSheet.create({
     borderRadius: sizes.small,
     padding: sizes.medium,
     fontSize: sizes.medium,
-    fontWeight: '300'
+    fontWeight: '300',
+    color: colors.black
   },
-
-
-
-
-
   // styles for creating a new user (welcome page pop-up)
   createUser: {
     flex: 1, 
@@ -143,16 +157,18 @@ export const styles = StyleSheet.create({
     textShadowRadius: 1,
     textShadowOffset: { height: 1, width: -1 }
   },
-
-
-
 });
 
 export const SettingsBackground = ({ children }) => (
   <LinearGradient
   colors={[ colors.white, colors.gray ]}
   locations={[.35, .9]}
-  style={styles.container}>{children}</LinearGradient>
+  style={styles.container}>{children}
+  <LinearGradient
+    colors={[colors.quaternary, highlights.primary, colors.secondary, highlights.tertiary]}
+    start={[0, 1]} end={[1, 1]}
+    style={{height: 3}} />
+  </LinearGradient>
 );
 
 export const EditNameBackground = ({ children }) => (

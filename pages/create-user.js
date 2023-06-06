@@ -20,7 +20,8 @@ const CreateUser = ({ navigation }) => {
     }
     const handleContinue = () => {
         if (value.length === 0) {
-            alert("Please enter at least one character!")
+            alert("Please enter at least one character!");
+            return
         } else {
             storeUser(value);
         }

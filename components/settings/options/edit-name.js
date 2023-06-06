@@ -20,6 +20,10 @@ const EditName = ({ modalVisible, toggleModal }) => {
         } catch (error) { console.error(error); }
     }
     const handleSubmit = () => {
+        if (value.length === 0) {
+            alert("You must enter at least 1 character!"); 
+            return
+        }
         updateUser(value);
         setValue("");
         toggleModal();
@@ -39,7 +43,9 @@ const EditName = ({ modalVisible, toggleModal }) => {
                         value={value} 
                         onChangeText={(newName) => setValue(newName)}
                         placeholder="Enter name" 
-                        placeholderTextColor="#6666" />
+                        placeholderTextColor="#6666"
+                        autoFocus={true}
+                        maxLength={20} />
                     <View style={styles.buttonsContainer}>
                       <Button 
                         label="Submit" 

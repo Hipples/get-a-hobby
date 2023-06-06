@@ -31,8 +31,7 @@ const HomeTabsNav = () => (
                     <LinearGradient
                         colors={[colors.quaternary, highlights.primary, colors.secondary, highlights.tertiary]}
                         start={[0, 1]} end={[1, 1]}
-                        style={{ height: 3 }}
-                    />
+                        style={{ height: 3 }} />
                 </LinearGradient>
               ),
             

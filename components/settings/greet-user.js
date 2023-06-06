@@ -23,7 +23,7 @@ const GreetUser = () => {
     return (
         <View style={styles.greetingContainer}>
             <Text style={styles.greetingText}>Hey { user }!</Text>
-            <Text style={styles.greetingPrompt}>What would you like to do?</Text>
+            <Text style={styles.greetingPrompt}>What should we do?</Text>
         </View>
     )
 }

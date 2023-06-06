@@ -1,15 +1,13 @@
-import DeleteUser from '../components/settings/options/delete-user';
-import EditUser from '../components/settings/options/edit-user';
 import GreetUser from '../components/settings/greet-user';
+import Options from '../components/settings/options';
 
-import { SettingsBackground, styles } from '../components/settings/settings-styles';
+import { SettingsBackground } from '../components/settings/settings-styles';
 
 const Settings = () => (
   <SettingsBackground>
     <GreetUser />
-    <EditUser />
-    <DeleteUser />
+    <Options />
   </SettingsBackground>
 );
 
-export default Settings; 
+export default Settings;
