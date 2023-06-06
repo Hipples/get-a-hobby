@@ -12,6 +12,10 @@ import RootNav from './root-nav';
 
 const WelcomeStack = createNativeStackNavigator();
 
+// a splashscreen displays while checking for a value in '@user' in async storage,
+// returning null progresses to the welcome screen,
+// the user can press Get Started! to store their name in '@user',
+// otherwise, a stored user will be sent straight to the home screen
 const InitialNav = () => {
     const [ loading, setLoading ] = useState(true);
     const { user, setUser } = useUserContext();
@@ -22,15 +26,17 @@ const InitialNav = () => {
             const name = await getItem();
             if (name !== null) {
                 setUser(name)
-                console.log(`Initial user: ${user}`);
                 setLoading(false)
             }
-        } catch (error) { console.log(error) }
-    }
+        } catch (error) { console.log(error) 
+        } finally { setLoading(false) }
+    } 
 
-    useEffect(() => { checkForUser() }, []);
+    useEffect(() => { checkForUser(); }, []);
 
     if ( loading ) { return(<SplashScreen />) }
+    
+    console.log(`User data retrieved for: ${user}`)
 
     return (
         <NavigationContainer>
@@ -39,7 +45,7 @@ const InitialNav = () => {
                     <>
                     <WelcomeStack.Screen name="Welcome" component={Welcome} />
                     <WelcomeStack.Group screenOptions={{ presentation: 'containedTransparentModal'}}>
-                        <WelcomeStack.Screen name="New User" component={CreateUser} />
+                        <WelcomeStack.Screen name="Create User" component={CreateUser} />
                     </WelcomeStack.Group>
                     </>
                 ) : (                
