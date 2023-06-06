@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { View, Text, TextInput, Pressable } from 'react-native';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
+import Button from '../common/button';
+
 import { useUserContext } from '../../contexts/user-context';
 import { styles } from './settings-styles'
 
@@ -23,7 +25,7 @@ const CreateUser = ({ navigation }) => {
             storeUser(value);
         }
     }
-    const handleGoBack = () => {
+    const handleCancel = () => {
         navigation.goBack();
     }
  
@@ -45,16 +47,16 @@ const CreateUser = ({ navigation }) => {
             maxLength={20} />
           
           <View style={styles.buttonsContainer}>
-            <Pressable 
-              style={styles.button} 
-              onPress={() => handleContinue()}>
-                <Text style={styles.continue}>Continue</Text>
-            </Pressable>
-            <Pressable 
-              style={styles.button} 
-              onPress={() => handleGoBack()}>
-                <Text style={styles.goBack}>Go Back</Text>
-            </Pressable>
+            <Button 
+              label='Continue'
+              onPress={() => handleContinue()}
+              buttonStyle={[styles.button, styles.continue]}
+              labelStyle={styles.buttonText}/>
+            <Button 
+              label='Cancel'
+              onPress={() => handleCancel()}
+              buttonStyle={[styles.button, styles.cancel]}
+              labelStyle={styles.buttonText}/>
           </View>
 
         </View>

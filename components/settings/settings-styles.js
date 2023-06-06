@@ -1,6 +1,6 @@
 import { Dimensions, StyleSheet } from "react-native";
 
-import { colors, shadows, sizes } from "../../constants/theme";
+import { colors, highlights, shadows, sizes } from "../../constants/theme";
 
 const screenWidth = Dimensions.get('window').width
 
@@ -16,43 +16,58 @@ export const styles = StyleSheet.create({
       justifyContent: 'space-around',
       alignItems: 'center',
       padding: sizes.medium, 
-      backgroundColor: colors.gray,
-      opacity: .9,
-      borderColor: colors.tertiary,
-      borderWidth: 1,
+      backgroundColor: highlights.gray,
+      opacity: .95,
+      borderColor: colors.secondary,
+      borderWidth: 3,
       borderRadius: sizes.medium,
-      elevation: 10,
-      shadowColor: shadows.black
+      elevation: 5,
+      shadowColor: shadows.secondary
     },
     loginPrompt: {
       fontSize: sizes.large,
       color: colors.black,
-      fontWeight: '500'
     },
     userInput: {
-      fontSize: sizes.large,
       flexBasis: 75,
-      padding: sizes.small,
       width: screenWidth-50,
-      borderWidth: 1
+      padding: sizes.small,
+      borderWidth: 2,
+      borderColor: colors.secondary,
+      borderRadius: sizes.small,
+      fontSize: sizes.large,
+      backgroundColor: colors.white,
     },
     buttonsContainer: {
       flexDirection: 'row', 
-      marginTop: 10,
       columnGap: 10,
       width: screenWidth-50,
       justifyContent: 'flex-end',
     },
     button: {
-      borderWidth: 1,
-      flexShrink: 1,
-      width: 20
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: sizes.xlarge*3.5,
+      padding: sizes.xsmall,
+      borderRadius: sizes.xsmall,
+      borderWidth: StyleSheet.hairlineWidth,
+      borderColor: colors.black,
+      elevation: 2,
+      shadowColor: shadows.black
     },
     continue: {
-      padding: sizes.xsmall
+      backgroundColor: colors.primary
     },
-    goBack: {
-      padding: sizes.small
+    cancel: {
+      backgroundColor: shadows.quaternary
+    },
+    buttonText: {
+      color: colors.white,
+      fontSize: sizes.medium,
+      fontWeight: '500',
+      textShadowColor: colors.black,
+      textShadowRadius: 1,
+      textShadowOffset: { height: 1, width: -1 }
     },
     deleteUserButtonContainer: {
       flex:1,
