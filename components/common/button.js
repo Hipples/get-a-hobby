@@ -1,5 +1,6 @@
 import { Pressable, Text } from "react-native";
 
+// a button component that loses opacity when pressed
 const Button = ({ label, buttonStyle, labelStyle, onPress }) => (
     <Pressable
         style={({ pressed }) => [{

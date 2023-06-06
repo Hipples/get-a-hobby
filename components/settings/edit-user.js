@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import { styles } from './settings-styles';
-import { Button, Keyboard, Modal, Pressable, Text, TextInput, View } from 'react-native';
-import { useUserContext } from '../../contexts/user-context';
+import { useEffect, useState } from 'react';
+import { Keyboard, Modal, Pressable, Text, TextInput, View } from 'react-native';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
-import { useNavigation } from '@react-navigation/native';
+
+import Button from '../common/button';
+
+import { useUserContext } from '../../contexts/user-context';
+import { styles } from './settings-styles';
 
 const EditName = ({ modalVisible, toggleModal }) => {
     const [ value, setValue ] = useState("");
     const { setUser } = useUserContext();
     const { setItem } = useAsyncStorage('@user');
     
-    const navigation = useNavigation();
-
     const updateUser = async (newName) => {
         try {
             await setItem(newName);
@@ -19,7 +19,6 @@ const EditName = ({ modalVisible, toggleModal }) => {
             console.log("Username updated.")
         } catch (error) { console.error(error); }
     }
-
     const handleSubmit = () => {
         updateUser(value);
         setValue("");
@@ -27,6 +26,10 @@ const EditName = ({ modalVisible, toggleModal }) => {
     }
 
     return(
+        <>
+        <View>
+            <Text></Text>
+        </View>
         <Modal
         visible={modalVisible}
         animationType="slide"
@@ -42,12 +45,42 @@ const EditName = ({ modalVisible, toggleModal }) => {
                         onChangeText={(newName) => setValue(newName)}
                         placeholder="Enter name" />
                     <View style={styles.buttonsContainer}>
-                      <Button title="Submit" onPress={() => handleSubmit()}/>
-                      <Button title="Cancel" onPress={toggleModal} />
+                      <Button 
+                        label="Submit" 
+                        buttonStyle={styles.button} labelStyle={styles.buttonText}
+                        onPress={() => handleSubmit()} />
+                      <Button 
+                        label="Cancel" 
+                        buttonStyle={styles.button} labelStyle={styles.buttonText}
+                        onPress={toggleModal} />
                     </View>
                 </View>
             </Pressable>
         </Modal>
+        </>
+    )
+}
+
+const GreetUser = () => {
+    const [ currentUser, setCurrentUser ] = useState(user);
+    const { user } = useUserContext();
+    const { getItem } = useAsyncStorage('@user');
+
+    const getStoredUser = async () => {
+        try{
+            const data = await getItem();
+            setCurrentUser(data)
+        }
+        catch(error){ console.error(error) }
+    }
+
+    useEffect(() => { getStoredUser() }, []);
+    console.log(`Hello from settings, ${currentUser}!`);
+    return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 20 }}>
+            <Text style={{fontsize: 30}}>Hey { user }!</Text>
+            <Text style={{fontsize: 30}}>What would you like to do?</Text>
+        </View>
     )
 }
 
@@ -59,10 +92,14 @@ const EditUser = () => {
     };
   
     return (
-        <>
-        <Button title="Open Modal" onPress={toggleModal} />
-        <EditName modalVisible={modalVisible} toggleModal={toggleModal} />
-        </>
+        <View style={styles.editUserContainer}>
+            <GreetUser />
+            <Button
+                label='Change my username'
+                buttonStyle={{flex: 1, backgroundColor: 'black'}} labelStyle={styles.buttonText}
+                onPress={toggleModal} />
+            <EditName modalVisible={modalVisible} toggleModal={toggleModal} />
+        </View>
     );
   };
 

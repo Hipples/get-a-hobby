@@ -81,6 +81,7 @@ export const styles = StyleSheet.create({
   },
   deleteUserButtonContainer: {
     flex:1,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -92,6 +93,10 @@ export const styles = StyleSheet.create({
   },
   deleteUserButtonLabel: {
       fontSize: 20
+  },
+  editUserContainer: {
+    flex: 1,
+    borderWidth: 3
   },
   modalContainer: {
     flexBasis: 500,
