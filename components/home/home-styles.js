@@ -10,11 +10,19 @@ export const styles = StyleSheet.create({
         paddingTop: sizes.xxlarge,
         backgroundColor: colors.white
     },
+    usernameContainer: {
+        alignSelf: 'center',
+        padding: sizes.medium,
+        marginBottom: sizes.small
+    },
+    username: {
+        fontSize: sizes.xxlarge
+    },
     introContainer: {
         marginBottom: sizes.xxlarge
     },
     introText: {
-        fontSize: sizes.xxlarge,
+        fontSize: sizes.xlarge,
         fontStyle: 'italic',
         textAlign: 'center',
         fontWeight: '300',
@@ -22,12 +30,13 @@ export const styles = StyleSheet.create({
         color: colors.black
     },
     activityContainer: {
+        borderWidth: 1,
         marginTop: sizes.xxlarge*2
     },
     activity: {
-        fontSize: sizes.medium,
+        fontSize: sizes.large,
         lineHeight: sizes.xxlarge,
-        fontWeight: '300',
+        // fontWeight: '300',
         textAlign: 'center'
     }, 
     followUpContainer: {

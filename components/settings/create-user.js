@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { View, Text, TextInput, Pressable } from 'react-native';
+import { View, Text, TextInput } from 'react-native';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
 import Button from '../common/button';
