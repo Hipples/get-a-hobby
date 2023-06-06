@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Modal, Pressable, View, Text, TextInput, Keyboard } from 'react-native';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
-import Button from '../common/button';
+import Button from '../../common/button';
 
-import { useUserContext } from '../../contexts/user-context';
-import { EditNameBackground, styles } from './settings-styles';
+import { useUserContext } from '../../../contexts/user-context';
+import { EditNameBackground, styles } from '../settings-styles';
 
 const EditName = ({ modalVisible, toggleModal }) => {
     const [ value, setValue ] = useState("");

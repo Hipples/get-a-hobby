@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { View, Text, TextInput } from 'react-native';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
-import Button from '../common/button';
+import Button from '../components/common/button';
 
-import { useUserContext } from '../../contexts/user-context';
-import { styles } from './settings-styles'
+import { useUserContext } from '../contexts/user-context';
+import { styles } from '../components/settings/settings-styles'
 
 // pops up when a new user presses Get Started! on the Welcome screen
 // users can enter their name to gain entry to the rest of the application

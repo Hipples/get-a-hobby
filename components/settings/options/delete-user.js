@@ -1,9 +1,9 @@
 import { useAsyncStorage } from "@react-native-async-storage/async-storage";
 
-import Button from "../common/button";
+import Button from "../../common/button";
 
-import { useUserContext } from "../../contexts/user-context"
-import { styles } from './settings-styles';
+import { useUserContext } from "../../../contexts/user-context"
+import { styles } from '../settings-styles';
 
 const DeleteUser = () => {
     const { setUser } = useUserContext();

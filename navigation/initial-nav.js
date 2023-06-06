@@ -7,7 +7,7 @@ import { useUserContext } from "../contexts/user-context";
 
 import SplashScreen from "../pages/splashscreen";
 import Welcome from '../pages/welcome';
-import CreateUser from "../components/settings/create-user";
+import CreateUser from "../pages/create-user";
 import RootNav from './root-nav';
 
 const WelcomeStack = createNativeStackNavigator();

@@ -1,5 +1,5 @@
-import DeleteUser from '../components/settings/delete-user';
-import EditUser from '../components/settings/edit-user';
+import DeleteUser from '../components/settings/options/delete-user';
+import EditUser from '../components/settings/options/edit-user';
 import GreetUser from '../components/settings/greet-user';
 
 import { SettingsBackground, styles } from '../components/settings/settings-styles';

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import EditName from './edit-name';
-import Button from '../common/button';
+import Button from '../../common/button';
 
-import { styles } from './settings-styles';
+import { styles } from '../settings-styles';
 
 const EditUser = () => {
     const [ modalVisible, setModalVisible ] = useState(false);
