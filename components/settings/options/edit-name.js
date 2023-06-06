@@ -5,7 +5,7 @@ import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import Button from '../../common/button';
 
 import { useUserContext } from '../../../contexts/user-context';
-import { EditNameBackground, styles } from '../settings-styles';
+import { PopupBackground, styles } from '../settings-styles';
 
 const EditName = ({ modalVisible, toggleModal }) => {
     const [ value, setValue ] = useState("");
@@ -19,6 +19,7 @@ const EditName = ({ modalVisible, toggleModal }) => {
             console.log("Username updated.")
         } catch (error) { console.error(error); }
     }
+
     const handleSubmit = () => {
         if (value.length === 0) {
             alert("You must enter at least 1 character!"); 
@@ -35,8 +36,8 @@ const EditName = ({ modalVisible, toggleModal }) => {
         animationType="slide"
         onRequestClose={toggleModal}
         transparent={true}>
-            <Pressable style={styles.editNameContainer} onPress={() => Keyboard.dismiss()}>
-                <EditNameBackground style={styles.modalContainer}>
+            <Pressable style={styles.popupContainer} onPress={() => Keyboard.dismiss()}>
+                <PopupBackground>
                     <Text style={styles.editNamePrompt}>What should we call you?</Text>
                     <TextInput 
                         style={styles.editNameInput}
@@ -56,7 +57,7 @@ const EditName = ({ modalVisible, toggleModal }) => {
                         buttonStyle={[styles.button, styles.cancel]} labelStyle={styles.buttonText}
                         onPress={toggleModal} />
                     </View>
-                </EditNameBackground>
+                </PopupBackground>
             </Pressable>
         </Modal>
     );

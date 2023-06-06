@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 import Button from '../../common/button';
@@ -9,15 +8,16 @@ const GoHome = () => {
     const navigation = useNavigation();
 
     const goHome = () => {
-      navigation.navigate('Home');
-    };
+        navigation.navigate('Home');
+    }
   
     return (
         <Button
             label='Go Back Home'
-            buttonStyle={[styles.option, styles.goHome]} labelStyle={styles.optionText}
+            buttonStyle={[styles.option, styles.goHome]} 
+            labelStyle={styles.optionText}
             onPress={() => goHome()} />
     );
-  };
+}
 
   export default GoHome;
