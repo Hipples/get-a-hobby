@@ -75,26 +75,26 @@ export const styles = StyleSheet.create({
         fontWeight: '300'
     },
     tipContainer: {
-        flexGrow: 1,
+        minHeight: 300,
         width: screenWidth-30,
-        justifyContent: 'space-evenly',
+        justifyContent: 'flex-start',
         marginVertical: sizes.xsmall,
         marginHorizontal: sizes.xxsmall,
         padding: sizes.small,
         borderWidth: 2,
-        backgroundColor: colors.white,
     },
     tipHeader: {
-        fontSize: sizes.small,
+        fontSize: sizes.medium,
         color: colors.black,
         textAlign: 'right',
+        marginBottom: sizes.small
     },
     tipTitle: {
         textAlign: 'center',
-        fontSize: sizes.medium,
+        fontSize: sizes.large,
         color: colors.black,
         fontStyle: 'italic',
-        marginVertical: sizes.small
+        marginBottom: sizes.xxlarge
     },
     tipText: {
         fontSize: sizes.small,
@@ -147,8 +147,8 @@ export const styles = StyleSheet.create({
 export const TipsGradient = (props) => (
     <LinearGradient 
         colors={[ highlights.quaternary, colors.quaternary ]}
-        start={{ x: .7, y: .7 }}
-        end={{ x: .9, y: 1 }}
+        start={{ x: .1, y: .5 }}
+        end={{ x: .1, y: .9 }}
         style={styles.tipContainer}>
             {props.children}
     </LinearGradient>

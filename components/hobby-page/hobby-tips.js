@@ -14,9 +14,11 @@ const HobbyTips = ({ tips }) => (
         {tips.map((tip) => {
             return (               
                 <TipsGradient key={tip.index}>
-                    <Text style={styles.tipHeader}>Tip #{tip.index}</Text>                 
-                    <Text style={styles.tipTitle}>{tip.title}</Text>
-                    <Text style={styles.tipText}>{tip.explanation}</Text>
+                    <Text style={styles.tipHeader}>#{tip.index}</Text>   
+                    <View style={{flex: 1, justifyContent: 'center'}}>
+                        <Text style={styles.tipTitle}>{tip.title}</Text>
+                        <Text style={styles.tipText}>{tip.explanation}</Text>
+                    </View>
                 </TipsGradient>
             );
         })}
