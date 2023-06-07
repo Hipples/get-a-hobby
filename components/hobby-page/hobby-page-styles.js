@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
     },
     image: {
         height: 350,
-        width: 350,
+        width: screenWidth,
         resizeMode: 'cover'
     },
     ratingHeader: {
