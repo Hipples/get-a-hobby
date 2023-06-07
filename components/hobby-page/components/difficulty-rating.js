@@ -7,22 +7,24 @@ import { Rating } from 'react-native-ratings';
 
 import RatingInfo from './rating-info'
 
-const infoIcon = require('../../../assets/info-icon.png');
+import { styles } from '../hobby-page-styles';
 
-const DifficultyRating = ( props ) => {
+const infoIcon = require('../../../assets/info-icon.png'); 
+
+const DifficultyRating = ({ rating }) => {
     const [ modalVisible, setModalVisible ] = useState(false);
     
     return (
-        <View style={props.stylesRatingContainer}>
-            <View style={props.stylesHeader}>
-                <Text style={props.stylesHeaderText}>Difficulty Rating</Text>
+        <View style={styles.contentContainer}>
+            <View style={styles.ratingHeader}>
+                <Text style={styles.ratingHeaderText}>Difficulty Rating</Text>
                 <RatingInfo 
                     modalVisible={modalVisible}
                     setModalVisible={setModalVisible} />                
                 <Pressable onPress={() => setModalVisible(true)}
-                    style={props.stylesInfoButton}>
+                    style={styles.infoButton}>
                     <Image source={infoIcon}
-                        style={props.stylesInfoIcon} />
+                        style={styles.infoIcon} />
                 </Pressable>
             </View>
             <Rating 
@@ -30,10 +32,10 @@ const DifficultyRating = ( props ) => {
                 resize='contain'
                 readonly={true}  // user cannot modify rating
                 ratingCount={5}  // easy, novice, intermediate, advanced, expert
-                startingValue={props.rating}  // sets number of filled stars to reflect rating
-                style={props.starPosition}
-                imageSize={props.starSize} 
-                tintColor={props.starBackground}/>
+                startingValue={rating}  // sets number of filled stars to reflect rating
+                style={styles.stars}
+                imageSize={styles.stars.imageSize}
+                tintColor={styles.container.backgroundColor}/>
         </View>
     );
 }

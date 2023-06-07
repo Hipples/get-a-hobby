@@ -111,6 +111,7 @@ export const styles = StyleSheet.create({
         fontSize: sizes.medium
     },
     infoContainer: {
+        justifyContent: 'center',
         margin: 20,
         backgroundColor: 'white',
         borderRadius: 20,

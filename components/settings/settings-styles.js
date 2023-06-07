@@ -93,6 +93,26 @@ export const styles = StyleSheet.create({
         fontWeight: '300',
         color: colors.black,
     },
+    // styles for RatingInfo popup on hobby pages
+    ratingInfo: {
+        flexBasis: 300,
+        backgroundColor: colors.white
+    },
+    ratingInfoHeader: {
+        marginBottom: 20, 
+        textAlign: 'center', 
+        fontSize: sizes.large
+    },
+    ratingItemContainer: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginHorizontal: 30
+    },
+    ratingItemText: {
+        flex: 1,
+        fontSize: sizes.medium,
+        fontWeight: '300'
+    },
     // common styles
     popupContainer: {
         flexGrow: 1,
