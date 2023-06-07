@@ -75,7 +75,7 @@ export const styles = StyleSheet.create({
         fontWeight: '300'
     },
     tipContainer: {
-        minHeight: 300,
+        minHeight: 350,
         width: screenWidth-30,
         justifyContent: 'flex-start',
         marginVertical: sizes.xsmall,
