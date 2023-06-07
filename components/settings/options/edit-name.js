@@ -30,6 +30,11 @@ const EditName = ({ modalVisible, toggleModal }) => {
         toggleModal();
     }
 
+    const handleCancel = () => {
+        setValue("");
+        toggleModal();
+    }
+
     return(
         <Modal
         visible={modalVisible}
@@ -55,7 +60,7 @@ const EditName = ({ modalVisible, toggleModal }) => {
                       <Button 
                         label="Cancel" 
                         buttonStyle={[styles.button, styles.cancel]} labelStyle={styles.buttonText}
-                        onPress={toggleModal} />
+                        onPress={() => handleCancel()} />
                     </View>
                 </PopupBackground>
             </Pressable>

@@ -27,7 +27,8 @@ const CreateUser = ({ navigation }) => {
         }
     }
     const handleCancel = () => {
-        navigation.goBack();
+      setValue("");
+      navigation.goBack();
     }
  
     return (

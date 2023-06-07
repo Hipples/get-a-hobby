@@ -47,9 +47,6 @@ export const styles = StyleSheet.create({
         color: colors.black,
         fontSize: sizes.large,
         fontWeight: 'bold',
-        textShadowColor: shadows.gray,
-        textShadowRadius: 1,
-        textShadowOffset: { height: 1, width: 2 }
     },
     // specific colors for the options in Settings
     editName: {
