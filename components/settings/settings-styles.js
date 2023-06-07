@@ -31,12 +31,11 @@ export const styles = StyleSheet.create({
     // common styles for the options displayed in Settings
     optionsContainer: {
         flex: 1,
-        justifyContent: 'space-evenly',
-        paddingBottom: sizes.xxlarge
+        justifyContent: 'center',
     },
     option: {
         borderWidth: 2,
-        borderRadius: sizes.xxlarge,
+        borderRadius: sizes.small,
         borderColor: colors.black,
         elevation: 3,
         marginVertical: sizes.small,
@@ -46,7 +45,7 @@ export const styles = StyleSheet.create({
     optionText: {
         color: colors.black,
         fontSize: sizes.large,
-        fontWeight: 'bold',
+        fontWeight: '500'
     },
     // specific colors for the options in Settings
     editName: {
