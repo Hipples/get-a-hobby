@@ -1,7 +1,9 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import { colors, shadows, highlights, sizes } from '../../constants/theme';
+
+const screenWidth = Dimensions.get('window').width
 
 export const styles = StyleSheet.create({
     // overall background
@@ -11,27 +13,29 @@ export const styles = StyleSheet.create({
     },
     // just the logo
     logoContainer: {
-        flex: 3,
-        paddingTop: sizes.xxlarge,
+        flex: 1,
         opacity: 0.9,
-        margin: sizes.xxlarge
+        margin: sizes.xxlarge,
+        paddingTop: sizes.medium
     },
     logo: {
-        flex: 1,
         tintColor: colors.black,
-        objectFit: 'fill'
+        objectFit: 'fill',
     },
     // from 'Welcome' to 'you!'
     messageContainer: {
-        flex: 2,
+        flex: 1,
+        paddingTop: 150
     },
     message: {
         color: colors.white,
         fontSize: sizes.medium,
         fontStyle: 'italic',
         textAlign: 'center',
+        
     },
     heading: {
+        
         fontSize: sizes.xlarge,
         fontStyle: 'normal',
         fontWeight: '300',
@@ -42,18 +46,18 @@ export const styles = StyleSheet.create({
     },
     // get started button
     buttonContainer: {
-        marginTop: sizes.xxlarge,
-        marginBottom: sizes.large,
+        marginTop: sizes.large,
+        marginBottom: sizes.large*2,
         justifyContent: 'center',
         alignItems: 'center',
         // container applies 4pt gradient border around button
-        width: 179,
+        width: screenWidth-16,
         height: sizes.large*2+4,
         borderRadius: 100
     },
     button: {
         height: sizes.large*2,
-        width: 175,
+        width: screenWidth-20,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 100,
