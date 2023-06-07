@@ -3,7 +3,6 @@ export const colors = {
     secondary: "#437f7a",
     tertiary: "#261650",
     quaternary: "#ff8800",
-
     white: "#fbfefd",
     gray: "#b1b5b9",
     black: "#0d120d",
@@ -14,7 +13,6 @@ export const shadows = {
     secondary: "#3f6e6a",
     tertiary: "#1f1636",
     quaternary: "#da7a0b",
-
     gray: "#82878c"
 }
 
@@ -23,7 +21,6 @@ export const highlights = {
     secondary: '#5fc4bb',
     tertiary: '#7155b9',
     quaternary: "#ffcc14",
-
     white: '#FFF',
     gray: '#d3d8db'
 }

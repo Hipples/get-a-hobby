@@ -148,8 +148,8 @@ export const styles = StyleSheet.create({
 export const TipsGradient = (props) => (
     <LinearGradient 
         colors={[ highlights.quaternary, colors.quaternary ]}
-        start={{ x: .1, y: .5 }}
-        end={{ x: .1, y: .9 }}
+        start={{ x: .7, y: .7 }}
+        end={{ x: .8, y: 1 }}
         style={styles.tipContainer}>
             {props.children}
     </LinearGradient>
